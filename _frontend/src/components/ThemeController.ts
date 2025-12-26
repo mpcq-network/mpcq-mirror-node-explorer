@@ -8,7 +8,7 @@ import {CoreConfig} from "@/config/CoreConfig.ts";
 export class ThemeController {
 
     public readonly coreConfig: CoreConfig
-    public readonly darkSelected = ref(false)
+    public readonly darkSelected = ref(true)
 
     //
     // Public

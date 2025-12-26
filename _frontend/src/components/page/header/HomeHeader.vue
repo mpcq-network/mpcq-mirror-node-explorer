@@ -40,7 +40,7 @@
 
     <!--  Central part of header-->
     <div class="title" :class="{'full-page': props.fullPage}">
-      Explore Hedera Blockchain
+      Explore MPCQ Blockchain
     </div>
     <SearchBar :size="90" class="search-bar"/>
 

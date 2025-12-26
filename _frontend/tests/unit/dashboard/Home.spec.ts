@@ -53,13 +53,13 @@ describe("Home.vue", () => {
         const dash = wrapper.findComponent(MarketDashboard)
         expect(dash.exists()).toBe(true)
         expect(dash.text()).toBe(
-            "HBAR PRICE" +
+            "MPQC PRICE" +
             "$0.2460" +
-            "HBAR MARKET CAP" +
+            "MPQC MARKET CAP" +
             "$5,186,816,738" +
-            "HBAR RELEASED" +
+            "MPQC RELEASED" +
             "21,084,620,884.43" +
-            "HBAR TOTAL50,000,000,000")
+            "MPQC TOTAL50,000,000,000")
 
 
         mock.restore()

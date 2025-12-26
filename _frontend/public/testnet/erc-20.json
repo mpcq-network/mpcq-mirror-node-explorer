@@ -1,4 +1,11 @@
-[
+[{
+    "contractId": "0.0.1017",
+    "address": "0xb1fa7d1598aac037ac3d8e6941cff0e60e35137a0f245ee11dcc48b85b0f7fe1",
+    "name": "MPCQ Token",
+    "symbol": "MPCQ",
+    "totalSupply": 1000000,
+    "decimals": 18
+},
   {
     "contractId": "0.0.693107",
     "address": "0x0b7fb136d0414b83997fa167702f9a17929b83c4",
