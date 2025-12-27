@@ -27,8 +27,8 @@ The following configuration parameters can be set in `core-config.json`:
 | `productDescription`           | `string` | No product description is displayed                                        |                            |
 | `metaDescription`              | `string` | Meta tag `name="description"` is unset                                     |                            |
 | `metaURL`                      | `url`    | Meta tag `property="og:url"` is unset                                      |                            |
-| `builtOnLogoLightURL`          | `url`    | [technology-logo-light.svg](public/technology-logo-light.svg) is displayed |                            |
-| `builtOnLogoDarkURL`           | `url`    | [technology-logo-dark.svg](public/technology-logo-dark.svg) is displayed   |                            |
+| `builtOnLogoLightURL`          | `url`    | [technology-logo-light.svg](public/mpcql-ogo-light.png) is displayed |                            |
+| `builtOnLogoDarkURL`           | `url`    | [technology-logo-dark.svg](public/mpcq-logo-dark.png) is displayed   |                            |
 | `builtOnURL`                   | `url`    | Navigation to technology web site is disabled                              |                            |
 | `sponsorLogoLightURL`          | `url`    | [sponsor-logo-light.png](public/sponsor-logo-light.png) is displayed       |                            |
 | `sponsorLogoDarkURL`           | `url`    | [sponsor-logo-dark.png](public/sponsor-logo-dark.png) is displayed         |                            |

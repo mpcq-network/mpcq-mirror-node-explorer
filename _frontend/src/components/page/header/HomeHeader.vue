@@ -22,7 +22,7 @@
             <ConnectWalletButton v-if="!connected"/>
             <WalletStatusButton v-else/>
           </template>
-          <ThemeSwitch/>
+   
         </div>
       </template>
       <template v-else>
