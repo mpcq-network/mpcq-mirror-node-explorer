@@ -130,7 +130,9 @@ div.footer-text-item {
 }
 
 .footer-logo {
-  max-width: 120px;
+  max-width: 220px;
+  border-radius: 5px;
+  max-height: 80px;
 }
 
 div.line {

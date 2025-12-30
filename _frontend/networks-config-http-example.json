@@ -1,7 +1,7 @@
 [
   {
-    "name": "mainnet",
-    "displayName": "MAINNET",
+    "name": "mainnet-1",
+    "displayName": "MAINNET-1",
     "url": "https://mainnet-public.mirrornode.hedera.com/",
     "ledgerID": "00",
     "enableWallet": true,
@@ -35,7 +35,7 @@
   },
   {
     "name": "previewnet",
-    "displayName": "PREVIEWNET",
+    "displayName": "PREVIEWNET-1",
     "url": "https://previewnet.mirrornode.hedera.com/",
     "ledgerID": "02",
     "enableWallet": true,

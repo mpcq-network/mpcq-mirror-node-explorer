@@ -180,8 +180,8 @@ export class NetworkConfig {
     public static FALLBACK = NetworkConfig.parse([
         {
             activate: true,
-            name: 'mainnet',
-            displayName: 'MAINNET',
+            name: 'mainnet-3',
+            displayName: 'MAINNET-3',
             url: "https://mainnet-public.mirrornode.hedera.com/",
             ledgerID: '00',
             baseRealm: 0,
@@ -199,46 +199,6 @@ export class NetworkConfig {
                 serverURL: "",
                 verifierURL: "",
                 chainID: 0x127
-            })
-        },
-        {
-            activate: true,
-            name: 'testnet',
-            displayName: 'TESTNET',
-            url: "https://testnet.mirrornode.hedera.com/",
-            ledgerID: '01',
-            baseRealm: 0,
-            baseShard: 0,
-            enableWallet: true,
-            enableStaking: true,
-            enableExpiry: true,
-            enableMarket: false,
-            sourcifySetup: SourcifySetup.parse({
-                activate: true,
-                repoURL: "",
-                serverURL: "",
-                verifierURL: "",
-                chainID: 0x128
-            })
-        },
-        {
-            activate: true,
-            name: 'previewnet',
-            displayName: 'PREVIEWNET',
-            url: "https://previewnet.mirrornode.hedera.com/",
-            ledgerID: '02',
-            baseRealm: 0,
-            baseShard: 0,
-            enableWallet: false,
-            enableStaking: true,
-            enableExpiry: true,
-            enableMarket: false,
-            sourcifySetup: SourcifySetup.parse({
-                activate: true,
-                repoURL: "",
-                serverURL: "",
-                verifierURL: "",
-                chainID: 0x129
             })
         }
     ])
@@ -311,6 +271,7 @@ export class NetworkConfig {
             throw Error("Expected array, got object")
         }
 
+        console.log(`Loaded ${entries.length} network entries`)
         return new NetworkConfig(entries)
     }
 }

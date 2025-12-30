@@ -124,8 +124,8 @@ export class CoreConfig {
             fetchURL(obj, "arweaveServerURL") ?? "https://arweave.net/",
             fetchString(obj, "cryptoName") ?? "MPCQ",
             fetchString(obj, "cryptoSymbol"),
-            fetchURL(obj, "cryptoLogoLightURL") ?? localPathToURL("crypto-logo-light.svg"),
-            fetchURL(obj, "cryptoLogoDarkURL") ?? localPathToURL("crypto-logo-dark.svg"),
+            fetchURL(obj, "cryptoLogoLightURL") ?? localPathToURL("crypto-logo-light.png"),
+            fetchURL(obj, "cryptoLogoDarkURL") ?? localPathToURL("crypto-logo-dark.png"),
             fetchString(obj, "walletConnectID"),
             fetchString(obj, "hgraphKey")
         )

@@ -177,8 +177,8 @@ proxyPass: {}
 config: |
   [
     {
-      "name": "mainnet",
-      "displayName": "MAINNET",
+      "name": "mainnet-2",
+      "displayName": "MAINNET-2",
       "url": "https://mainnet-public.mirrornode.hedera.com/",
       "ledgerID": "00",
       "baseRealm": 0,
@@ -208,7 +208,22 @@ config: |
     },
     {
       "name": "previewnet",
-      "displayName": "PREVIEWNET",
+      "displayName": "PREVIEWNET-2",
+      "url": "https://previewnet.mirrornode.hedera.com/",
+      "ledgerID": "02",
+      "baseRealm": 0,
+      "baseShard": 0,
+      "enableWallet": false,
+      "enableStaking": false,
+      "enableExpiry": false,
+      "enableMarket": false,
+      "erc20IndexURL": null,
+      "erc721IndexURL": null,
+      "sourcifySetup": null
+    },
+    {
+      "name": "mpcqnet",
+      "displayName": "MPCQNET",
       "url": "https://previewnet.mirrornode.hedera.com/",
       "ledgerID": "02",
       "baseRealm": 0,
