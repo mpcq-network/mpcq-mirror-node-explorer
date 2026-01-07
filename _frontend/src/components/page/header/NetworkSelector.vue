@@ -31,6 +31,7 @@ watch(routeManager.currentNetwork, (newNetwork) => {
 })
 watch(selectedNetwork, (newNetwork) => {
   if (newNetwork !== routeManager.currentNetwork.value) {
+  console.log('NEW NETWORK:', newNetwork);
     routeManager.routeToHome(newNetwork)
   }
 })

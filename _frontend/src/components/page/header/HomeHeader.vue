@@ -40,7 +40,7 @@
 
     <!--  Central part of header-->
     <div class="title" :class="{'full-page': props.fullPage}">
-      Explore MPCQ Blockchain
+      Explore MPCQ Hashgraph
     </div>
     <SearchBar :size="90" class="search-bar"/>
 
