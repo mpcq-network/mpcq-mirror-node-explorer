@@ -85,7 +85,7 @@
     "sourcifySetup": {
       "activate": true,
       "repoURL": "https://repository.local/contracts/",
-      "serverURL": "http://69.169.102.31:5551/server/",
+      "serverURL": "https://localhost/server/",
       "chainID": 295
     }
   }
