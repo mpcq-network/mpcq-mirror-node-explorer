@@ -21,7 +21,7 @@
         {{ formattedAmount }}
       </span>
       <span v-if="cryptoSymbol" v-html="cryptoSymbol"/>
-      <span v-else style="color: var(--text-secondary)">ℏ</span>
+      <span v-else style="color: var(--text-secondary)">q</span>
     </div>
     <span v-if="props.showExtra" class="dollar-amount">
       <HbarExtra :hide-zero="props.hideZero" :tbar-amount="amount ?? 0" :timestamp="timestamp"/>

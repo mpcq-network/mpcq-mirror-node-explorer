@@ -1,18 +1,18 @@
 // SPDX-License-Identifier: Apache-2.0
 
-import {computed, ComputedRef, Ref, ref, watch, WatchStopHandle} from "vue";
-import {PathParam} from "@/utils/PathParam";
-import {EntityID} from "@/utils/EntityID";
-import {EthereumAddress} from "@/utils/EthereumAddress";
-import {AccountAlias} from "@/utils/AccountAlias";
-import {AccountByIdCache} from "@/utils/cache/AccountByIdCache";
-import {AccountBalanceTransactions, Key, TokenBalance} from "@/schemas/MirrorNodeSchemas";
-import {NetworkConfig} from "@/config/NetworkConfig";
-import {NodeAnalyzer} from "@/utils/analyzer/NodeAnalyzer";
-import {makeEthAddressForAccount} from "@/schemas/MirrorNodeUtils.ts";
-import {AccountByAddressCache} from "@/utils/cache/AccountByAddressCache";
-import {AccountByAliasCache} from "@/utils/cache/AccountByAliasCache";
-import {routeManager} from "@/utils/RouteManager.ts";
+import { computed, ComputedRef, Ref, ref, watch, WatchStopHandle } from "vue";
+import { PathParam } from "@/utils/PathParam";
+import { EntityID } from "@/utils/EntityID";
+import { EthereumAddress } from "@/utils/EthereumAddress";
+import { AccountAlias } from "@/utils/AccountAlias";
+import { AccountByIdCache } from "@/utils/cache/AccountByIdCache";
+import { AccountBalanceTransactions, Key, TokenBalance } from "@/schemas/MirrorNodeSchemas";
+import { NetworkConfig } from "@/config/NetworkConfig";
+import { NodeAnalyzer } from "@/utils/analyzer/NodeAnalyzer";
+import { makeEthAddressForAccount } from "@/schemas/MirrorNodeUtils.ts";
+import { AccountByAddressCache } from "@/utils/cache/AccountByAddressCache";
+import { AccountByAliasCache } from "@/utils/cache/AccountByAliasCache";
+import { routeManager } from "@/utils/RouteManager.ts";
 
 export class AccountLocParser {
 
@@ -35,7 +35,7 @@ export class AccountLocParser {
     }
 
     public mount(): void {
-        this.watchHandle.value = watch(this.accountLocObj, this.accountLocObjDidChange, {immediate: true})
+        this.watchHandle.value = watch(this.accountLocObj, this.accountLocObjDidChange, { immediate: true })
         this.nodeAnalyzer.mount()
     }
 
@@ -147,7 +147,7 @@ export class AccountLocParser {
                         result = "Account with ID " + o + " was not found"
                     } else if (o instanceof EthereumAddress) {
                         result = "Own this account? " +
-                            "Activate it by transferring any amount of ℏ or tokens to " + o.toCompactString() + '.'
+                            "Activate it by transferring any amount of q or tokens to " + o.toCompactString() + '.'
                     } else { // o instanceof AccountAlias
                         result = "Account with alias " + o + " was not found"
                     }
