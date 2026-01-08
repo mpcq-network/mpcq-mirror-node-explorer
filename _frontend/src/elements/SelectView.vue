@@ -49,7 +49,7 @@ const darkSelected = ThemeController.inject().darkSelected
 
 select {
   appearance: none;
-  background-color: transparent;
+  background-color: black;
   background-image: url("@/assets/chevron-down-light.svg");
   background-position: calc(100% - 6px);
   background-repeat: no-repeat;

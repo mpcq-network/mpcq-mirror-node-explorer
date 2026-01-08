@@ -4,13 +4,13 @@
 <!--                                                     TEMPLATE                                                    -->
 <!-- --------------------------------------------------------------------------------------------------------------- -->
 
-<template>
+<!-- <template>
 
   <div @click="darkSelected = !darkSelected" :class="{'start': !darkSelected, 'end': darkSelected}">
     <img :src="imageURL" alt="theme switch"/>
   </div>
 
-</template>
+</template> -->
 
 <!-- --------------------------------------------------------------------------------------------------------------- -->
 <!--                                                      SCRIPT                                                     -->

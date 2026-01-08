@@ -1,10 +1,10 @@
-import {fileURLToPath, URL} from 'node:url'
+import { fileURLToPath, URL } from 'node:url'
 
-import {defineConfig} from 'vite'
+import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import basicSsl from '@vitejs/plugin-basic-ssl'
 import * as child from "child_process"
-import {readFileSync} from "fs"
+import { readFileSync } from "fs"
 
 const commitHash = child.execSync("git rev-parse --short HEAD").toString() //i.e., 706e821
 const tagAndCommitHash = resolveVersion() //i.e., v23.5.0-1-g706e821
@@ -31,7 +31,7 @@ export default defineConfig({
   },
   plugins: [
     vue(),
-    basicSsl(),
+    // basicSsl(),
   ],
   resolve: {
     alias: {

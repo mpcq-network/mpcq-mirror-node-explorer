@@ -15,7 +15,7 @@
   <template v-else>
     <HbarTransferGraphF
         data-cy="hbarTransfers"
-        title="Hbar Transfers"
+        title="MPCQ Transfers"
         v-bind:class="{'mb-4': displayRewardTransfers || displayNftTransfers || displayTokenTransfers}"
         v-bind:transaction="transaction ?? undefined"/>
   </template>
