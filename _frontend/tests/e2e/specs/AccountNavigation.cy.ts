@@ -28,7 +28,7 @@ describe('Account Navigation', () => {
         })
     })
 
-    it('should follow links to HTS fungible', () => {
+    it('should follow links to MTS fungible', () => {
         const accountId1 = "0.0.592746"
 
         cy.visit('mainnet/account/' + accountId1)
@@ -58,7 +58,7 @@ describe('Account Navigation', () => {
         })
     })
 
-    it('should follow links to HTS NFT', () => {
+    it('should follow links to MTS NFT', () => {
         const accountId1 = "0.0.592746"
 
         cy.visit('mainnet/account/' + accountId1)

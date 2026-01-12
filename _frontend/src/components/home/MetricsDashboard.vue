@@ -63,7 +63,7 @@ onMounted(() => contractCreateCounterController.mount())
 onBeforeUnmount(() => contractCreateCounterController.unmount())
 
 const tokenCreateCounterController = new TransactionCounterController(
-    TransactionCounterController.TOKEN_CREATE, "HTS Token Created", "", routeManager)
+    TransactionCounterController.TOKEN_CREATE, "MTS Token Created", "", routeManager)
 onMounted(() => tokenCreateCounterController.mount())
 onBeforeUnmount(() => tokenCreateCounterController.unmount())
 

@@ -9,7 +9,7 @@
   <DashboardCardV2 v-if="accountId" id="tokensSection">
 
     <template #title>
-      <span>HTS Tokens</span>
+      <span>MTS Tokens</span>
     </template>
 
     <template #right-control>

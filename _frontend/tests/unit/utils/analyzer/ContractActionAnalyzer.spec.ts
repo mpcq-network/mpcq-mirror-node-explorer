@@ -2,17 +2,17 @@
 
 // SPDX-License-Identifier: Apache-2.0
 
-import {describe, expect, test} from "vitest"
+import { describe, expect, test } from "vitest"
 import MockAdapter from "axios-mock-adapter"
 import axios from "axios"
-import {ref} from "vue"
-import {ContractActionAnalyzer} from "@/utils/analyzer/ContractActionAnalyzer"
-import {flushPromises} from "@vue/test-utils"
-import {SAMPLE_CONTRACT_ACTIONS, SAMPLE_TOKEN} from "../../Mocks"
-import {ContractAction} from "@/schemas/MirrorNodeSchemas"
-import {SignatureCache} from "@/utils/cache/SignatureCache";
-import {AccountByAddressCache} from "@/utils/cache/AccountByAddressCache";
-import {cloneMock, fetchGetURLs} from "../../MockUtils";
+import { ref } from "vue"
+import { ContractActionAnalyzer } from "@/utils/analyzer/ContractActionAnalyzer"
+import { flushPromises } from "@vue/test-utils"
+import { SAMPLE_CONTRACT_ACTIONS, SAMPLE_TOKEN } from "../../Mocks"
+import { ContractAction } from "@/schemas/MirrorNodeSchemas"
+import { SignatureCache } from "@/utils/cache/SignatureCache";
+import { AccountByAddressCache } from "@/utils/cache/AccountByAddressCache";
+import { cloneMock, fetchGetURLs } from "../../MockUtils";
 
 describe("ContractActionAnalyzer.spec.ts", () => {
 
@@ -193,7 +193,7 @@ describe("ContractActionAnalyzer.spec.ts", () => {
 
     })
 
-    test("ContractAction recipient is undefined and to is HTS", async () => {
+    test("ContractAction recipient is undefined and to is MTS", async () => {
 
         const mock = new MockAdapter(axios as any)
 
@@ -262,10 +262,10 @@ const SAMPLE_CALLER = {
     "deleted": false,
     "expiry_timestamp": null,
     "key":
-        {
-            "_type": "ED25519",
-            "key": "aa2f7b3e759f4531ec2e7941afa449e6a6e610efb52adae89e9cd8e9d40ddcbf"
-        },
+    {
+        "_type": "ED25519",
+        "key": "aa2f7b3e759f4531ec2e7941afa449e6a6e610efb52adae89e9cd8e9d40ddcbf"
+    },
     "max_automatic_token_associations": 0,
     "memo": "",
     "receiver_sig_required": false,
@@ -295,10 +295,10 @@ const SAMPLE_RECIPIENT = {
     "deleted": false,
     "expiry_timestamp": null,
     "key":
-        {
-            "_type": "ED25519",
-            "key": "aa2f7b3e759f4531ec2e7941afa449e6a6e610efb52adae89e9cd8e9d40ddcbf"
-        },
+    {
+        "_type": "ED25519",
+        "key": "aa2f7b3e759f4531ec2e7941afa449e6a6e610efb52adae89e9cd8e9d40ddcbf"
+    },
     "max_automatic_token_associations": 0,
     "memo": "",
     "receiver_sig_required": false,

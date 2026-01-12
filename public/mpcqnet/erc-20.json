@@ -51362,7 +51362,7 @@
   {
     "contractId": "0.0.4702000",
     "address": "0x09197e1d4715dac1849591090ef2a8a8c778f5ba",
-    "name": "HTS token OFT",
+    "name": "MTS token OFT",
     "symbol": "HTSOFT",
     "totalSupply": 0,
     "decimals": 18
@@ -61106,7 +61106,7 @@
   {
     "contractId": "0.0.5002978",
     "address": "0x7253b1e2c6bcd7db386e5021d8be8f7d47cc5441",
-    "name": "HTS token OFT",
+    "name": "MTS token OFT",
     "symbol": "HTSOFT",
     "totalSupply": 0,
     "decimals": 18
@@ -61114,7 +61114,7 @@
   {
     "contractId": "0.0.5002982",
     "address": "0x5b993fadebfb0de972a9dd00c78c7627c95197ed",
-    "name": "HTS token OFT",
+    "name": "MTS token OFT",
     "symbol": "HTSOFT",
     "totalSupply": 0,
     "decimals": 18
@@ -61122,7 +61122,7 @@
   {
     "contractId": "0.0.5003001",
     "address": "0x319d257ed27feb2114aa5c54093df46a76420445",
-    "name": "HTS token OFT",
+    "name": "MTS token OFT",
     "symbol": "HTSOFT",
     "totalSupply": 0,
     "decimals": 18
@@ -61130,7 +61130,7 @@
   {
     "contractId": "0.0.5003062",
     "address": "0x03b8fcf2377ec1aa55e68fec4f90b4e30cee4aac",
-    "name": "HTS token OFT",
+    "name": "MTS token OFT",
     "symbol": "HTSOFT",
     "totalSupply": 0,
     "decimals": 18
@@ -61138,7 +61138,7 @@
   {
     "contractId": "0.0.5003066",
     "address": "0xd18be6f3d9bcd83212442bde04d27a969c0ffe8a",
-    "name": "HTS token OFT",
+    "name": "MTS token OFT",
     "symbol": "HTSOFT",
     "totalSupply": 1000,
     "decimals": 18
@@ -62075,7 +62075,7 @@
     "contractId": "0.0.5070830",
     "address": "0x00000000000000000000000000000000004d5fee",
     "name": "HT SToken",
-    "symbol": "HTS",
+    "symbol": "MTS",
     "totalSupply": 44444464448,
     "decimals": 6
   },
@@ -107178,7 +107178,7 @@
   {
     "contractId": "0.0.5993184",
     "address": "0x9721fa180ab44301611f1e754d0ba92ba7ad624e",
-    "name": "HTS token OFT",
+    "name": "MTS token OFT",
     "symbol": "HTSOFT",
     "totalSupply": 0,
     "decimals": 18
@@ -107210,7 +107210,7 @@
   {
     "contractId": "0.0.5993508",
     "address": "0xc888d9944e07a1c0f864038f9b4a568166bf54f0",
-    "name": "HTS token OFT",
+    "name": "MTS token OFT",
     "symbol": "HTSOFT",
     "totalSupply": 0,
     "decimals": 18
