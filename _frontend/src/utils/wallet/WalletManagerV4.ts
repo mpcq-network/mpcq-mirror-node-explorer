@@ -93,8 +93,16 @@ export class WalletManagerV4 {
     public readonly isWatchSupported
         = computed(() => this.isMetamaskWallet.value)
 
+    // public readonly walletCount = computed(() => {
+    //     let result = EIP6963Agent.instance.providers.value.length
+    //     if (this.routeManager.walletConnectID.value !== null) {
+    //         result += 1
+    //     }
+    //     return result
+    // })
+    public readonly providers = computed(() => EIP6963Agent.instance.providers.value)
     public readonly walletCount = computed(() => {
-        let result = EIP6963Agent.instance.providers.value.length
+        let result = this.providers.value.length
         if (this.routeManager.walletConnectID.value !== null) {
             result += 1
         }

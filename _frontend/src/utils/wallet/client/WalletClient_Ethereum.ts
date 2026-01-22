@@ -201,24 +201,35 @@ export class WalletClient_Ethereum extends WalletClient {
 
 }
 
+// export function networkToChainId(network: string, hex: boolean = true): string | null {
+//     let result: number | null
+//     // https://docs.hedera.com/hedera/core-concepts/smart-contracts/deploying-smart-contracts/json-rpc-relay
+//     switch (network) {
+//         case "mainnet":
+//             result = 295
+//             break
+//         case "testnet":
+//             result = 296
+//             break
+//         case "previewnet":
+//             result = 297
+//             break
+//         default:
+//             result = null
+//             break
+//     }
+//     return result !== null ? result.toString(hex ? 16 : 10) : null
+// }
 export function networkToChainId(network: string, hex: boolean = true): string | null {
-    let result: number | null
-    // https://docs.hedera.com/hedera/core-concepts/smart-contracts/deploying-smart-contracts/json-rpc-relay
+    let result: number | null;
     switch (network) {
-        case "mainnet":
-            result = 295
-            break
-        case "testnet":
-            result = 296
-            break
-        case "previewnet":
-            result = 297
-            break
-        default:
-            result = null
-            break
+        case "mainnet": result = 295; break;
+        case "testnet": result = 296; break;
+        case "previewnet": result = 297; break;
+        case "MPCQNET": result = 298; break; // Add your custom chain ID (0x12A)
+        default: result = null; break;
     }
-    return result !== null ? result.toString(hex ? 16 : 10) : null
+    return result !== null ? result.toString(hex ? 16 : 10) : null;
 }
 
 

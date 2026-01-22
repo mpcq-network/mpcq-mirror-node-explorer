@@ -105,13 +105,17 @@ export interface WalletItem {
 
 const walletConnectID = CoreConfig.inject().walletConnectID
 const walletItems = computed<WalletItem[]>(() => {
+  console.log("Building wallet items list")
   const result: WalletItem[] = []
   if (walletConnectID !== null) {
+    console.log("Adding Wallet Connect to wallet items")
     result.push({name: "Wallet Connect", iconURL: WALLECT_CONNECT_LOGO, uuid: null})
   }
   for (const d of EIP6963Agent.instance.providers.value) {
+    console.log("Detected wallet provider: " + d.info.name)
     result.push({name: d.info.name, iconURL: d.info.icon, uuid: d.info.uuid})
   }
+  console.log("Total wallet items: " + result)
   return result
 })
 

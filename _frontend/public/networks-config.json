@@ -69,15 +69,14 @@
   {
     "name": "mpcqnet",
     "displayName": "MPCQNET",
-    "url": "http://69.169.102.31:5551/",
-    "ledgerID": "00",
+    "url": "http://69.169.102.31:5600/",
+    "ledgerID": "03",
     "baseRealm": 0,
     "baseShard": 0,
     "enableWallet": true,
     "enableStaking": true,
     "enableExpiry": true,
-    "enableMarket": true,
-    "popularTokenIndexURL": "popular-tokens.json",
+    "enableMarket": true, 
     "erc20IndexURL": "mpcqnet/erc-20.json",
     "erc721IndexURL": "mpcqnet/erc-721.json",
     "erc1155IndexURL": "mpcqnet/erc-1155.json",
@@ -86,7 +85,7 @@
       "activate": true,
       "repoURL": "https://repository.local/contracts/",
       "serverURL": "https://localhost/server/",
-      "chainID": 295
+      "chainID": 298
     }
   }
 ]
