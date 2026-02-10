@@ -2,14 +2,14 @@
 
 // SPDX-License-Identifier: Apache-2.0
 
-import {describe, expect, it} from 'vitest'
-import {flushPromises, mount} from "@vue/test-utils"
+import { describe, expect, it } from 'vitest'
+import { flushPromises, mount } from "@vue/test-utils"
 import TransactionDetails from "@/pages/TransactionDetails.vue";
 import HbarTransferGraphF from "@/components/transfer_graphs/HbarTransferGraphF.vue";
 import TokenTransferGraph from "@/components/transfer_graphs/TokenTransferGraphF.vue";
 import NftTransferGraph from "@/components/transfer_graphs/NftTransferGraph.vue";
 import NotificationBanner from "@/components/NotificationBanner.vue";
-import axios, {AxiosRequestConfig} from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 import {
     SAMPLE_ACCOUNT,
     SAMPLE_ASSOCIATED_TOKEN,
@@ -43,15 +43,15 @@ import {
     SAMPLE_TRANSACTIONS
 } from "../Mocks";
 import MockAdapter from "axios-mock-adapter";
-import {HMSF} from "@/utils/HMSF";
-import {TransactionID} from "@/utils/TransactionID";
+import { HMSF } from "@/utils/HMSF";
+import { TransactionID } from "@/utils/TransactionID";
 import Oruga from "@oruga-ui/oruga-next";
-import {base64Decode, byteToHex} from "@/utils/B64Utils";
-import {fetchGetURLs} from "../MockUtils";
+import { base64Decode, byteToHex } from "@/utils/B64Utils";
+import { fetchGetURLs } from "../MockUtils";
 import router from "@/utils/RouteManager.ts";
 import TransactionDetails_Summary from "@/pages/TransactionDetails_Summary.vue";
 import TransactionDetails_Result from "@/pages/TransactionDetails_Result.vue";
-import {SignatureCache} from "@/utils/cache/SignatureCache.ts";
+import { SignatureCache } from "@/utils/cache/SignatureCache.ts";
 
 /*
     Bookmarks
@@ -74,7 +74,7 @@ describe("TransactionDetails.vue", () => {
         const matcher11 = "/api/v1/transactions"
         mock.onGet(matcher11).reply(((config: AxiosRequestConfig) => {
             if (config.params.timestamp == SAMPLE_TRANSACTION.consensus_timestamp) {
-                return [200, {transactions: [SAMPLE_TRANSACTION]}]
+                return [200, { transactions: [SAMPLE_TRANSACTION] }]
             } else {
                 return [404]
             }
@@ -93,7 +93,7 @@ describe("TransactionDetails.vue", () => {
         const wrapper = mount(TransactionDetails_Summary, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 transactionLoc: SAMPLE_TRANSACTION.consensus_timestamp,
@@ -119,7 +119,7 @@ describe("TransactionDetails.vue", () => {
             "api/v1/contracts/" + SAMPLE_TRANSACTION.token_transfers[1].account,
         ])
 
-        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(SAMPLE_TRANSACTION.transaction_id)+"Copy")
+        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(SAMPLE_TRANSACTION.transaction_id) + "Copy")
         expect(wrapper.get("#transactionTypeValue").text()).toBe("CRYPTO TRANSFER")
         expect(wrapper.get("#consensusAtValue").text()).toBe("5:12:31.6676 AMFeb 28, 2022, UTC") // UTC because of HMSF.forceUTC
         expect(wrapper.get("#transactionHashValue").text()).toBe("0xa012961232ed7d2842836e95f7e9c4356fdfe2de08199091701a969c1d1fd93671d3078ee83b28fb460a88b4cbd8ecd2Copy")
@@ -131,7 +131,7 @@ describe("TransactionDetails.vue", () => {
 
         expect(wrapper.get("#memoValue").text()).toBe("None")
         expect(wrapper.get("#operatorAccountValue").text()).toBe("0.0.29624024")
-        expect(wrapper.get("#nodeAccountValue").text()).toBe("0.0.5Hosted by Hedera | Central, USA")
+        expect(wrapper.get("#nodeAccountValue").text()).toBe("0.0.5Hosted by MPCQ | Central, USA")
         expect(wrapper.get("#durationValue").text()).toBe("2min")
         expect(() => wrapper.get("#associatedTokenId")).toThrowError()
         expect(() => wrapper.get("#entityId")).toThrowError()
@@ -142,7 +142,7 @@ describe("TransactionDetails.vue", () => {
 
         expect(wrapper.findComponent(HbarTransferGraphF).text()).toBe(
             "Hbar Transfers ACCOUNT  AMOUNT  ACCOUNT  AMOUNT 0.0.29624024-0.00470065ℏ-$0.00116\n\n" +
-            "0.0.40.00022028ℏ$0.00005Node fee (Hedera)\n\n" +
+            "0.0.40.00022028ℏ$0.00005Node fee (MPCQ)\n\n" +
             "0.0.980.00448037ℏ$0.00110Hedera fee collection account")
 
         expect(wrapper.findComponent(TokenTransferGraph).text()).toBe(
@@ -181,10 +181,10 @@ describe("TransactionDetails.vue", () => {
         mock.onGet(matcher2).reply(200, SAMPLE_CONTRACT)
 
 
-        const param3 = {timestamp: timestamp, internal: true, limit: 1}
+        const param3 = { timestamp: timestamp, internal: true, limit: 1 }
         const matcher3 = "/api/v1/contracts/results"
-        mock.onGet(matcher3, {params: param3}).reply(200, {
-            results: [SAMPLE_CONTRACT_RESULT_DETAILS], "links": {"next": null}
+        mock.onGet(matcher3, { params: param3 }).reply(200, {
+            results: [SAMPLE_CONTRACT_RESULT_DETAILS], "links": { "next": null }
         });
 
         const matcher4 = "/api/v1/contracts/" + SAMPLE_CONTRACT_RESULT_DETAILS.contract_id + "/results/" + timestamp
@@ -215,7 +215,7 @@ describe("TransactionDetails.vue", () => {
         const wrapper = mount(TransactionDetails_Result, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 transactionLoc: timestamp,
@@ -279,7 +279,7 @@ describe("TransactionDetails.vue", () => {
 
         const mock = new MockAdapter(axios as any)
         const matcher1 = "/api/v1/transactions/" + transactionHash
-        mock.onGet(matcher1).reply(200, {transactions: [SAMPLE_TRANSACTION]});
+        mock.onGet(matcher1).reply(200, { transactions: [SAMPLE_TRANSACTION] });
         const matcher11 = "/api/v1/transactions/" + transactionId
         mock.onGet(matcher11).reply(200, SAMPLE_CONTRACTCALL_TRANSACTIONS);
         const matcher12 = "/api/v1/transactions"
@@ -294,10 +294,10 @@ describe("TransactionDetails.vue", () => {
         const matcher2 = "/api/v1/contracts/" + contractId
         mock.onGet(matcher2).reply(200, SAMPLE_CONTRACT)
 
-        const param3 = {timestamp: timestamp, internal: true, limit: 1}
+        const param3 = { timestamp: timestamp, internal: true, limit: 1 }
         const matcher3 = "/api/v1/contracts/results"
-        mock.onGet(matcher3, {params: param3}).reply(200, {
-            results: [SAMPLE_CONTRACT_RESULT_DETAILS], "links": {"next": null}
+        mock.onGet(matcher3, { params: param3 }).reply(200, {
+            results: [SAMPLE_CONTRACT_RESULT_DETAILS], "links": { "next": null }
         });
 
         const matcher4 = "/api/v1/contracts/" + SAMPLE_CONTRACT_RESULT_DETAILS.contract_id + "/results/" + timestamp
@@ -317,7 +317,7 @@ describe("TransactionDetails.vue", () => {
         const wrapper = mount(TransactionDetails_Result, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 transactionLoc: transactionHash
@@ -377,7 +377,7 @@ describe("TransactionDetails.vue", () => {
         let matcher1 = "/api/v1/transactions"
         mock.onGet(matcher1).reply(((config: AxiosRequestConfig) => {
             if (config.params.timestamp == SAMPLE_TRANSACTION.consensus_timestamp) {
-                return [200, {transactions: [SAMPLE_TRANSACTION]}]
+                return [200, { transactions: [SAMPLE_TRANSACTION] }]
             } else {
                 return [404]
             }
@@ -392,7 +392,7 @@ describe("TransactionDetails.vue", () => {
         const wrapper = mount(TransactionDetails_Summary, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 transactionLoc: SAMPLE_TRANSACTION.consensus_timestamp
@@ -415,7 +415,7 @@ describe("TransactionDetails.vue", () => {
             "api/v1/contracts/" + SAMPLE_TRANSACTION.token_transfers[1].account,
         ])
 
-        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(SAMPLE_TRANSACTION.transaction_id)+"Copy")
+        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(SAMPLE_TRANSACTION.transaction_id) + "Copy")
         expect(wrapper.get("#transactionTypeValue").text()).toBe("CRYPTO TRANSFER")
         expect(wrapper.get("#memoValue").text()).toBe("None")
 
@@ -427,7 +427,7 @@ describe("TransactionDetails.vue", () => {
         matcher1 = "/api/v1/transactions"
         mock.onGet(matcher1).reply(((config: AxiosRequestConfig) => {
             if (config.params.timestamp == transaction.consensus_timestamp) {
-                return [200, {transactions: [transaction]}]
+                return [200, { transactions: [transaction] }]
             } else {
                 return [404]
             }
@@ -459,7 +459,7 @@ describe("TransactionDetails.vue", () => {
             "api/v1/blocks",
         ])
 
-        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(transaction.transaction_id)+"Copy")
+        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(transaction.transaction_id) + "Copy")
         expect(wrapper.get("#transactionTypeValue").text()).toBe("CONTRACT CALL")
         expect(wrapper.get("#memoValue").text()).toBe("Mirror Node acceptance test: 2022-03-07T15:09:26.066680977Z Execute contract")
 
@@ -484,7 +484,7 @@ describe("TransactionDetails.vue", () => {
         const matcher1 = "/api/v1/transactions"
         mock.onGet(matcher1).reply(((config: AxiosRequestConfig) => {
             if (config.params.timestamp == SAMPLE_FAILED_TRANSACTION.consensus_timestamp) {
-                return [200, {transactions: [SAMPLE_FAILED_TRANSACTION]}]
+                return [200, { transactions: [SAMPLE_FAILED_TRANSACTION] }]
             } else {
                 return [404]
             }
@@ -496,7 +496,7 @@ describe("TransactionDetails.vue", () => {
         const wrapper = mount(TransactionDetails, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 transactionLoc: SAMPLE_FAILED_TRANSACTION.consensus_timestamp
@@ -540,7 +540,7 @@ describe("TransactionDetails.vue", () => {
         const wrapper = mount(TransactionDetails, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 transactionLoc: invalidTimestamp
@@ -573,7 +573,7 @@ describe("TransactionDetails.vue", () => {
         const matcher1 = "/api/v1/transactions"
         mock.onGet(matcher1).reply(((config: AxiosRequestConfig) => {
             if (config.params.timestamp == transaction.consensus_timestamp) {
-                return [200, {transactions: [transaction]}]
+                return [200, { transactions: [transaction] }]
             } else {
                 return [404]
             }
@@ -584,7 +584,7 @@ describe("TransactionDetails.vue", () => {
         const wrapper = mount(TransactionDetails_Summary, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 transactionLoc: transaction.consensus_timestamp
@@ -606,7 +606,7 @@ describe("TransactionDetails.vue", () => {
             "api/v1/blocks",
         ])
 
-        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(transaction.transaction_id)+"Copy")
+        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(transaction.transaction_id) + "Copy")
 
         expect(wrapper.get("#transactionTypeValue").text()).toBe("CONTRACT CALL")
         expect(wrapper.get("#entityId").text()).toBe("Contract IDHedera Token Service System Contract")
@@ -628,18 +628,18 @@ describe("TransactionDetails.vue", () => {
         const matcher1 = "/api/v1/transactions"
         mock.onGet(matcher1).reply(((config: AxiosRequestConfig) => {
             if (config.params.timestamp == INNER.consensus_timestamp) {
-                return [200, {transactions: [INNER]}]
+                return [200, { transactions: [INNER] }]
             } else {
                 return [404]
             }
         }) as any);
         const matcher11 = "/api/v1/transactions/" + OUTER.transaction_id
-        mock.onGet(matcher11).reply(200, {transactions: [OUTER]});
+        mock.onGet(matcher11).reply(200, { transactions: [OUTER] });
 
         const wrapper = mount(TransactionDetails_Summary, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 transactionLoc: INNER.consensus_timestamp,
@@ -659,7 +659,7 @@ describe("TransactionDetails.vue", () => {
             "api/v1/transactions",
         ])
 
-        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(INNER.transaction_id)+"Copy")
+        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(INNER.transaction_id) + "Copy")
         expect(wrapper.get("#transactionTypeValue").text()).toBe("TOKEN MINT")
 
         const link = wrapper.get("#batchTransactionValue")
@@ -697,13 +697,13 @@ describe("TransactionDetails.vue", () => {
             let result
             switch (config.params.timestamp) {
                 case OUTER.consensus_timestamp:
-                    result = [200, {transactions: [OUTER]}]
+                    result = [200, { transactions: [OUTER] }]
                     break
                 case INNER1.consensus_timestamp:
-                    result = [200, {transactions: [INNER1]}]
+                    result = [200, { transactions: [INNER1] }]
                     break
                 case INNER2.consensus_timestamp:
-                    result = [200, {transactions: [INNER2]}]
+                    result = [200, { transactions: [INNER2] }]
                     break
                 default:
                     result = [404]
@@ -718,7 +718,7 @@ describe("TransactionDetails.vue", () => {
         const wrapper = mount(TransactionDetails_Summary, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 transactionLoc: OUTER.consensus_timestamp,
@@ -741,7 +741,7 @@ describe("TransactionDetails.vue", () => {
             "api/v1/tokens/" + INNER1.entity_id,
         ])
 
-        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(OUTER.transaction_id)+"Copy")
+        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(OUTER.transaction_id) + "Copy")
 
         expect(wrapper.get("#transactionTypeValue").text()).toBe("ATOMIC BATCH")
 
@@ -781,9 +781,9 @@ describe("TransactionDetails.vue", () => {
         const matcher1 = "/api/v1/transactions"
         mock.onGet(matcher1).reply(((config: AxiosRequestConfig) => {
             if (config.params.timestamp == SCHEDULING.consensus_timestamp) {
-                return [200, {transactions: [SCHEDULING]}]
+                return [200, { transactions: [SCHEDULING] }]
             } else if (config.params.timestamp == SCHEDULED.consensus_timestamp) {
-                return [200, {transactions: [SCHEDULED]}]
+                return [200, { transactions: [SCHEDULED] }]
             } else {
                 return [404]
             }
@@ -798,7 +798,7 @@ describe("TransactionDetails.vue", () => {
         const wrapper = mount(TransactionDetails_Summary, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 transactionLoc: SCHEDULING.consensus_timestamp
@@ -822,7 +822,7 @@ describe("TransactionDetails.vue", () => {
             "api/v1/transactions",
         ])
 
-        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(SCHEDULING.transaction_id)+"Copy")
+        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(SCHEDULING.transaction_id) + "Copy")
 
         const scheduled = wrapper.get("#scheduledTransactionValue")
         expect(scheduled.text()).toBe("0.0.503733@1666754898.238965661" + "EXECUTED")
@@ -855,9 +855,9 @@ describe("TransactionDetails.vue", () => {
         const matcher1 = "/api/v1/transactions"
         mock.onGet(matcher1).reply(((config: AxiosRequestConfig) => {
             if (config.params.timestamp == SCHEDULING.consensus_timestamp) {
-                return [200, {transactions: [SCHEDULING]}]
+                return [200, { transactions: [SCHEDULING] }]
             } else if (config.params.timestamp == SCHEDULED.consensus_timestamp) {
-                return [200, {transactions: [SCHEDULED]}]
+                return [200, { transactions: [SCHEDULED] }]
             } else {
                 return [404]
             }
@@ -872,7 +872,7 @@ describe("TransactionDetails.vue", () => {
         const wrapper = mount(TransactionDetails_Summary, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 transactionLoc: SCHEDULED.consensus_timestamp
@@ -898,7 +898,7 @@ describe("TransactionDetails.vue", () => {
             "api/v1/contracts/" + SCHEDULING.transfers[2].account,
         ])
 
-        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(SCHEDULING.transaction_id)+"Copy")
+        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(SCHEDULING.transaction_id) + "Copy")
 
         const scheduling = wrapper.get("#scheduleCreateTransactionValue")
         expect(scheduling.text()).toBe(TransactionID.normalizeForDisplay(SCHEDULING.transaction_id))
@@ -931,7 +931,7 @@ describe("TransactionDetails.vue", () => {
         const matcher1 = "/api/v1/transactions"
         mock.onGet(matcher1).reply(((config: AxiosRequestConfig) => {
             if (config.params.timestamp == CHILD.consensus_timestamp) {
-                return [200, {transactions: [CHILD]}]
+                return [200, { transactions: [CHILD] }]
             } else {
                 return [404]
             }
@@ -944,7 +944,7 @@ describe("TransactionDetails.vue", () => {
         const wrapper = mount(TransactionDetails_Summary, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 transactionLoc: CHILD.consensus_timestamp,
@@ -965,7 +965,7 @@ describe("TransactionDetails.vue", () => {
             "api/v1/contracts/" + SAMPLE_PARENT_CHILD_TRANSACTIONS.transactions![0].transfers[1].account,
         ])
 
-        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(PARENT.transaction_id)+"Copy")
+        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(PARENT.transaction_id) + "Copy")
 
         const link = wrapper.get("#parentTransactionValue")
         expect(link.text()).toBe("CONTRACT CALL")
@@ -998,7 +998,7 @@ describe("TransactionDetails.vue", () => {
         const matcher1 = "/api/v1/transactions"
         mock.onGet(matcher1).reply(((config: AxiosRequestConfig) => {
             if (config.params.timestamp == PARENT.consensus_timestamp) {
-                return [200, {transactions: [PARENT]}]
+                return [200, { transactions: [PARENT] }]
             } else {
                 return [404]
             }
@@ -1011,7 +1011,7 @@ describe("TransactionDetails.vue", () => {
         const wrapper = mount(TransactionDetails_Summary, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 transactionLoc: PARENT.consensus_timestamp
@@ -1057,7 +1057,7 @@ describe("TransactionDetails.vue", () => {
             "/mainnet/token/" + TARGETED_TOKEN
         )
 
-        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(PARENT.transaction_id)+"Copy")
+        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(PARENT.transaction_id) + "Copy")
         expect(wrapper.find("#batchTransaction").exists()).toBe(false)
         expect(wrapper.find("#innerTransactions").exists()).toBe(false)
         expect(wrapper.find("#scheduledTransaction").exists()).toBe(false)
@@ -1079,7 +1079,7 @@ describe("TransactionDetails.vue", () => {
         const matcher1 = "/api/v1/transactions"
         mock.onGet(matcher1).reply(((config: AxiosRequestConfig) => {
             if (config.params.timestamp == NONCE_1.consensus_timestamp) {
-                return [200, {transactions: [NONCE_1]}]
+                return [200, { transactions: [NONCE_1] }]
             } else {
                 return [404]
             }
@@ -1090,7 +1090,7 @@ describe("TransactionDetails.vue", () => {
         const wrapper = mount(TransactionDetails_Summary, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 transactionLoc: NONCE_1.consensus_timestamp,
@@ -1110,7 +1110,7 @@ describe("TransactionDetails.vue", () => {
             "api/v1/contracts/" + SAMPLE_SAME_ID_NOT_PARENT_TRANSACTIONS.transactions[0].transfers[2].account,
         ])
 
-        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(NONCE_1.transaction_id)+"Copy")
+        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(NONCE_1.transaction_id) + "Copy")
         expect(wrapper.find("#batchTransaction").exists()).toBe(false)
         expect(wrapper.find("#innerTransactions").exists()).toBe(false)
         expect(wrapper.find("#scheduledTransaction").exists()).toBe(false)
@@ -1133,7 +1133,7 @@ describe("TransactionDetails.vue", () => {
         const matcher1 = "/api/v1/transactions"
         mock.onGet(matcher1).reply(((config: AxiosRequestConfig) => {
             if (config.params.timestamp == NONCE_1.consensus_timestamp) {
-                return [200, {transactions: [NONCE_1]}]
+                return [200, { transactions: [NONCE_1] }]
             } else {
                 return [404]
             }
@@ -1144,7 +1144,7 @@ describe("TransactionDetails.vue", () => {
         const wrapper = mount(TransactionDetails_Summary, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 transactionLoc: NONCE_1.consensus_timestamp,
@@ -1165,7 +1165,7 @@ describe("TransactionDetails.vue", () => {
             "api/v1/contracts/" + SAMPLE_PARENT_CHILD_AND_UNRELATED_TRANSACTIONS.transactions![1].transfers[3].account,
         ])
 
-        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(NONCE_1.transaction_id)+"Copy")
+        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(NONCE_1.transaction_id) + "Copy")
         expect(wrapper.find("#batchTransaction").exists()).toBe(false)
         expect(wrapper.find("#innerTransactions").exists()).toBe(false)
         expect(wrapper.find("#scheduledTransaction").exists()).toBe(false)
@@ -1190,11 +1190,11 @@ describe("TransactionDetails.vue", () => {
 
         const mock = new MockAdapter(axios as any)
         const matcher1 = "/api/v1/transactions/" + transactionId
-        mock.onGet(matcher1).reply(200, {transactions: [transaction]});
+        mock.onGet(matcher1).reply(200, { transactions: [transaction] });
         const matcher11 = "/api/v1/transactions"
         mock.onGet(matcher11).reply(((config: AxiosRequestConfig) => {
             if (config.params.timestamp == transaction.consensus_timestamp) {
-                return [200, {transactions: [transaction]}]
+                return [200, { transactions: [transaction] }]
             } else {
                 return [404]
             }
@@ -1216,7 +1216,7 @@ describe("TransactionDetails.vue", () => {
         const wrapper = mount(TransactionDetails_Summary, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 transactionLoc: transaction.consensus_timestamp,
@@ -1241,7 +1241,7 @@ describe("TransactionDetails.vue", () => {
             "api/v1/tokens/" + SAMPLE_ASSOCIATED_TOKEN_2.token_id,
         ])
 
-        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(transactionId)+"Copy")
+        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(transactionId) + "Copy")
         expect(wrapper.get("#transactionTypeValue").text()).toBe("TOKEN ASSOCIATE")
         expect(wrapper.get("#consensusAtValue").text()).toBe("6:51:52.1505 PMDec 21, 2022, UTC") // UTC because of HMSF.forceUTC
         expect(wrapper.get("#transactionHashValue").text()).toBe("0x4786079999df169a38349249d3c9a5489a83f1c7c51b6b1edeb81347a496d93183e24a43ad03372ebc501528a6032debCopy")
@@ -1254,7 +1254,7 @@ describe("TransactionDetails.vue", () => {
         expect(wrapper.findComponent(NftTransferGraph).exists()).toBe(true)
 
         expect(wrapper.findComponent(HbarTransferGraphF).text()).toBe("Hbar Transfers ACCOUNT  AMOUNT  ACCOUNT  AMOUNT 0.0.642949-1.15905210ℏ-$0.28517\n\n" +
-            "0.0.30.05805847ℏ$0.01428Node fee (Hedera)\n\n" +
+            "0.0.30.05805847ℏ$0.01428Node fee (MPCQ)\n\n" +
             "0.0.981.10099363ℏ$0.27088Hedera fee collection account")
         expect(wrapper.findComponent(TokenTransferGraph).text()).toBe("")
         expect(wrapper.findComponent(NftTransferGraph).text()).toBe("")
@@ -1294,7 +1294,7 @@ describe("TransactionDetails.vue", () => {
         const wrapper = mount(TransactionDetails_Summary, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 transactionLoc: timestamp
@@ -1310,7 +1310,7 @@ describe("TransactionDetails.vue", () => {
         // console.log(wrapper.html())
         // console.log(wrapper.text())
 
-        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(transactionId)+"Copy")
+        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(transactionId) + "Copy")
         expect(wrapper.text()).toMatch(RegExp("CONTRACT CALL"))
         expect(wrapper.get("#entityIdName").text()).toBe("Token ID")
         expect(wrapper.get("#entityIdValue").text()).toMatch(entityId)
@@ -1349,7 +1349,7 @@ describe("TransactionDetails.vue", () => {
         const wrapper = mount(TransactionDetails_Summary, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 transactionLoc: timestamp
@@ -1376,7 +1376,7 @@ describe("TransactionDetails.vue", () => {
             "api/v1/blocks",
         ])
 
-        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(transactionId)+"Copy")
+        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(transactionId) + "Copy")
         expect(wrapper.text()).toMatch(RegExp("ETHEREUM TRANSACTION"))
         expect(wrapper.get("#entityIdName").text()).toBe("Account ID")
         expect(wrapper.get("#entityIdValue").text()).toMatch(entityId)
@@ -1413,7 +1413,7 @@ describe("TransactionDetails.vue", () => {
         const wrapper = mount(TransactionDetails_Summary, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 transactionLoc: timestamp
@@ -1439,7 +1439,7 @@ describe("TransactionDetails.vue", () => {
             "api/v1/blocks",
         ])
 
-        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(transactionId)+"Copy")
+        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(transactionId) + "Copy")
         expect(wrapper.text()).toMatch(RegExp("ETHEREUM TRANSACTION"))
         expect(wrapper.get("#entityIdName").text()).toBe("Contract ID")
         expect(wrapper.get("#entityIdValue").text()).toMatch(entityId)
@@ -1510,10 +1510,10 @@ describe("TransactionDetails.vue", () => {
             "nonce": 29
         }
 
-        const param3 = {timestamp: timestamp, internal: true}
+        const param3 = { timestamp: timestamp, internal: true }
         const matcher3 = "/api/v1/contracts/results"
-        mock.onGet(matcher3, {params: param3}).reply(200, {
-            results: [result], "links": {"next": null}
+        mock.onGet(matcher3, { params: param3 }).reply(200, {
+            results: [result], "links": { "next": null }
         });
 
         const matcher4 = "/api/v1/contracts/" + result.contract_id + "/results/" + timestamp
@@ -1541,13 +1541,13 @@ describe("TransactionDetails.vue", () => {
 
         const matcher5 = "/api/v1/contracts/results/" + result.hash + "/actions?limit=100"
         mock.onGet(matcher5).reply(200, {
-            actions: [action], "links": {"next": null}
+            actions: [action], "links": { "next": null }
         })
 
         const wrapper = mount(TransactionDetails_Summary, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 transactionLoc: timestamp
@@ -1576,7 +1576,7 @@ describe("TransactionDetails.vue", () => {
             "api/v1/tokens/" + SAMPLE_ETHEREUM_TRANSACTIONS_ASSOCIATING_TOKEN.transactions[0].entity_id,
         ])
 
-        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(transactionId)+"Copy")
+        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(transactionId) + "Copy")
         expect(wrapper.text()).toMatch(RegExp("ETHEREUM TRANSACTION"))
         expect(wrapper.get("#entityIdName").text()).toBe("Token ID")
         expect(wrapper.get("#entityIdValue").text()).toMatch(entityId)
@@ -1613,11 +1613,11 @@ describe("TransactionDetails.vue", () => {
         const mock = new MockAdapter(axios as any)
         const transaction = SAMPLE_FILE_UPDATE_TRANSACTION
         const matcher1 = "/api/v1/transactions/" + transaction.transaction_id
-        mock.onGet(matcher1).reply(200, {transactions: [transaction]});
+        mock.onGet(matcher1).reply(200, { transactions: [transaction] });
         const matcher11 = "/api/v1/transactions"
         mock.onGet(matcher11).reply(((config: AxiosRequestConfig) => {
             if (config.params.timestamp == transaction.consensus_timestamp) {
-                return [200, {transactions: [transaction]}]
+                return [200, { transactions: [transaction] }]
             } else {
                 return [404]
             }
@@ -1626,7 +1626,7 @@ describe("TransactionDetails.vue", () => {
         const wrapper = mount(TransactionDetails_Summary, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 transactionLoc: transaction.consensus_timestamp,
@@ -1652,7 +1652,7 @@ describe("TransactionDetails.vue", () => {
 
         expect(wrapper.text()).not.toContain("FAILURE")
 
-        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(transaction.transaction_id)+"Copy")
+        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(transaction.transaction_id) + "Copy")
         expect(wrapper.get("#transactionTypeValue").text()).toBe("FILE UPDATE")
         expect(wrapper.get("#resultValue").text()).toBe("FEE_SCHEDULE_FILE_PART_UPLOADED")
         expect(wrapper.get("#consensusAtValue").text()).toBe("5:42:14.5350 PMJun 9, 2022, UTC")
@@ -1673,20 +1673,20 @@ describe("TransactionDetails.vue", () => {
         const matcher11 = "/api/v1/transactions"
         mock.onGet(matcher11).reply(((config: AxiosRequestConfig) => {
             if (config.params.timestamp == SAMPLE_TRANSACTION.consensus_timestamp) {
-                return [200, {transactions: [SAMPLE_TRANSACTION]}]
+                return [200, { transactions: [SAMPLE_TRANSACTION] }]
             } else {
                 return [404]
             }
         }) as any);
         const matcher111 = "/api/v1/blocks"
-        mock.onGet(matcher111).reply(200, {blocks: [SAMPLE_BLOCK_ZERO]});
+        mock.onGet(matcher111).reply(200, { blocks: [SAMPLE_BLOCK_ZERO] });
         const matcher2 = "/api/v1/tokens/" + SAMPLE_TOKEN.token_id
         mock.onGet(matcher2).reply(200, SAMPLE_TOKEN);
 
         const wrapper = mount(TransactionDetails_Summary, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 transactionLoc: SAMPLE_TRANSACTION.consensus_timestamp,
@@ -1711,7 +1711,7 @@ describe("TransactionDetails.vue", () => {
             "api/v1/contracts/" + SAMPLE_TRANSACTION.token_transfers[1].account,
         ])
 
-        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(SAMPLE_TRANSACTION.transaction_id)+"Copy")
+        expect(wrapper.get("#transactionIDValue").text()).toBe(TransactionID.normalizeForDisplay(SAMPLE_TRANSACTION.transaction_id) + "Copy")
         expect(wrapper.get("#transactionTypeValue").text()).toBe("CRYPTO TRANSFER")
         expect(wrapper.get("#consensusAtValue").text()).toBe("5:12:31.6676 AMFeb 28, 2022, UTC") // UTC because of HMSF.forceUTC
         expect(wrapper.get("#blockNumberValue").text()).toBe("0")

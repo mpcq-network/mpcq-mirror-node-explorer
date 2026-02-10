@@ -4,9 +4,9 @@
 //                                                      Account
 // ---------------------------------------------------------------------------------------------------------------------
 
-import {EntityID} from "@/utils/EntityID";
-import {makeDefaultNodeDescription} from "@/schemas/MirrorNodeUtils.ts";
-import {fetchJSArray, fetchJSObject, fetchJSString} from "@/utils/JSUtils.ts";
+import { EntityID } from "@/utils/EntityID";
+import { makeDefaultNodeDescription } from "@/schemas/MirrorNodeUtils.ts";
+import { fetchJSArray, fetchJSObject, fetchJSString } from "@/utils/JSUtils.ts";
 
 export interface AccountsResponse {
     accounts: AccountInfo[] | undefined
@@ -31,12 +31,12 @@ export interface AccountInfo {
     staked_account_id: string | null    // The account to which this account is staking
     staked_node_id: number | null       // The id of the node to which this account is staking
     stake_period_start: string | null  // The staking period during which either the staking settings for this account
-                                       // changed (such as starting staking or changing stakedNode) or the most recent
-                                       // reward was earned, whichever is later. If this account is not currently
-                                       // staked to a node, then the value is null
+    // changed (such as starting staking or changing stakedNode) or the most recent
+    // reward was earned, whichever is later. If this account is not currently
+    // staked to a node, then the value is null
     pending_reward: number | undefined  // The pending reward in tinybars the account will receive in the next
-                                        // reward payout. Note the value is updated at the end of each staking period
-                                        // and there may be delay to reflect the changes in the past staking period.
+    // reward payout. Note the value is updated at the end of each staking period
+    // and there may be delay to reflect the changes in the past staking period.
 }
 
 export interface AccountBalanceTransactions extends AccountInfo {
@@ -840,7 +840,7 @@ export function makeNodeSelectorDescription(node: NetworkNode): string {
 
     let result = node.node_id
         + ' - '
-        + (node.description ?? makeDefaultNodeDescription(node.node_id ?? null))
+        + (node.description ? makeDefaultNodeDescription(node.node_id ?? null) : "MPCQ Node")
 
     if (percentMin !== 0 && percentMin < 1) {
         result += " - Not Rewarding (total stake is " + percentFormatter.format(percentMin) + " of min)"
@@ -874,24 +874,24 @@ export interface NetworkSupplyResponse {
 
 export interface NetworkStake {
     max_stake_rewarded: number,               // The maximum amount of tinybar that can be staked for reward while still
-                                              // achieving the maximum per-hbar reward rate
+    // achieving the maximum per-hbar reward rate
     max_staking_reward_rate_per_hbar: number, // The maximum reward rate, in tinybars per whole hbar, that any account can receive in a day
     max_total_reward: number,                 // The total tinybars to be paid as staking rewards in the ending period,
-                                              // after applying the settings for the 0.0.800 balance threshold and the maximum stake rewarded
+    // after applying the settings for the 0.0.800 balance threshold and the maximum stake rewarded
     node_reward_fee_fraction: number,         // The fraction between zero and one of the network and service fees paid to the node reward account 0.0.801
     reserved_staking_rewards: number,         // The amount of the staking reward funds of account 0.0.800 reserved to
-                                              // pay pending rewards that have been earned but not collected
+    // pay pending rewards that have been earned but not collected
     reward_balance_threshold: number,         // The unreserved tinybar balance of account 0.0.800 required to achieve the maximum per-hbar reward rate
     stake_total: number,                      // The total amount staked to the network in tinybars the start of the current staking period
     staking_period: TimestampRange,           // The timestamp range of the staking period
     staking_period_duration: number,          // The number of minutes in a staking period
     staking_periods_stored: number,           // The number of staking periods for which the reward is stored for each node
     staking_reward_fee_fraction: number,      // The fraction between zero and one of the network and service fees paid
-                                              // to the staking reward account 0.0.800
+    // to the staking reward account 0.0.800
     staking_reward_rate: number,              // The total number of tinybars to be distributed as staking rewards each period
     staking_start_threshold: number,          // The minimum balance of staking reward account 0.0.800 required to active rewards
     unreserved_staking_reward_balance: number // The unreserved balance of account 0.0.800 at the close of the just-ending period;
-                                              // this value is used to compute the HIP-782 balance ratio
+    // this value is used to compute the HIP-782 balance ratio
 }
 
 export interface NetworkFeesResponse {

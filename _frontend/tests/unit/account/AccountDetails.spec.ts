@@ -2,8 +2,8 @@
 
 // SPDX-License-Identifier: Apache-2.0
 
-import {describe, expect, it} from 'vitest'
-import {flushPromises, mount} from "@vue/test-utils"
+import { describe, expect, it } from 'vitest'
+import { flushPromises, mount } from "@vue/test-utils"
 import axios from "axios";
 import AccountDetails from "@/pages/AccountDetails.vue";
 import {
@@ -30,15 +30,15 @@ import {
 import MockAdapter from "axios-mock-adapter";
 import Oruga from "@oruga-ui/oruga-next";
 import TransactionTable from "@/components/transaction/TransactionTable.vue";
-import {HMSF} from "@/utils/HMSF";
+import { HMSF } from "@/utils/HMSF";
 import NotificationBanner from "@/components/NotificationBanner.vue";
-import {TransactionID} from "@/utils/TransactionID";
+import { TransactionID } from "@/utils/TransactionID";
 import TransactionFilterSelect from "@/components/transaction/TransactionFilterSelect.vue";
-import {NetworkConfig} from "@/config/NetworkConfig.ts";
-import {networkConfigKey} from "@/AppKeys.ts";
-import {fetchGetURLs} from "../MockUtils";
+import { NetworkConfig } from "@/config/NetworkConfig.ts";
+import { networkConfigKey } from "@/AppKeys.ts";
+import { fetchGetURLs } from "../MockUtils";
 import PageHeader from "@/components/page/header/PageHeader.vue";
-import router, {routeManager} from "@/utils/RouteManager.ts";
+import router, { routeManager } from "@/utils/RouteManager.ts";
 import AccountDetails_Operations from "@/pages/AccountDetails_Operations.vue";
 import AccountDetails_Summary from "@/pages/AccountDetails_Summary.vue";
 
@@ -84,7 +84,7 @@ describe("AccountDetails.vue", () => {
         const wrapper = mount(AccountDetails, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 accountId: SAMPLE_ACCOUNT.account ?? undefined
@@ -147,12 +147,12 @@ describe("AccountDetails.vue", () => {
         mock.onGet(matcher2).reply(200, SAMPLE_TRANSACTIONS);
 
         const matcher8 = "/api/v1/accounts/" + SAMPLE_ACCOUNT.account + "/rewards"
-        mock.onGet(matcher8).reply(200, {rewards: []})
+        mock.onGet(matcher8).reply(200, { rewards: [] })
 
         const wrapper = mount(AccountDetails_Operations, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 accountId: SAMPLE_ACCOUNT.account ?? undefined
@@ -208,7 +208,7 @@ describe("AccountDetails.vue", () => {
         const wrapper = mount(AccountDetails, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 accountId: SAMPLE_NODE_ACCOUNT.account ?? undefined
@@ -233,7 +233,7 @@ describe("AccountDetails.vue", () => {
 
         expect(wrapper.find("#nodeLinkValue").exists()).toBe(true)
         const link = wrapper.get("#nodeLinkValue")
-        expect(link.text()).toBe("0 - Hosted by Hedera | East Coast, USA")
+        expect(link.text()).toBe("0 - Hosted by MPCQ | East Coast, USA")
         expect(link.get('a').attributes('href')).toMatch(RegExp("/node/" + nodeId + "$"))
 
         mock.restore()
@@ -268,7 +268,7 @@ describe("AccountDetails.vue", () => {
         const wrapper = mount(AccountDetails_Summary, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 accountId: SAMPLE_ACCOUNT.account ?? undefined
@@ -346,7 +346,7 @@ describe("AccountDetails.vue", () => {
         const wrapper = mount(AccountDetails, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 accountId: invalidAccountId
@@ -394,7 +394,7 @@ describe("AccountDetails.vue", () => {
         const wrapper = mount(AccountDetails, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 accountId: deletedAccount.account ?? undefined
@@ -451,7 +451,7 @@ describe("AccountDetails.vue", () => {
         const wrapper = mount(AccountDetails, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 accountId: SAMPLE_ACCOUNT_STAKING_NODE.account ?? undefined
@@ -476,7 +476,7 @@ describe("AccountDetails.vue", () => {
         ])
 
         expect(wrapper.get("#stakedToName").text()).toBe("Staked to")
-        expect(wrapper.get("#stakedToValue").text()).toBe("Node 1 - Hosted by Hedera | East Coast, USA")
+        expect(wrapper.get("#stakedToValue").text()).toBe("Node 1 - Hosted by MPCQ | East Coast, USA")
         expect(wrapper.get("#pendingRewardValue").text()).toBe("0.12345678ℏ$0.03037Period Started Nov 11, 2022, 00:00 UTC")
         expect(wrapper.get("#declineRewardValue").text()).toBe("Accepted")
 
@@ -524,7 +524,7 @@ describe("AccountDetails.vue", () => {
         const wrapper = mount(AccountDetails, {
             global: {
                 plugins: [router, Oruga],
-                provide: {[networkConfigKey]: networkConfig, "isMediumScreen": false}
+                provide: { [networkConfigKey]: networkConfig, "isMediumScreen": false }
             },
             props: {
                 accountId: SAMPLE_ACCOUNT_STAKING_NODE.account ?? undefined
@@ -551,7 +551,7 @@ describe("AccountDetails.vue", () => {
         ])
 
         expect(wrapper.get("#stakedToName").text()).toBe("Staked to")
-        expect(wrapper.get("#stakedToValue").text()).toBe("Account 0.0.5Hosted by Hedera | Central, USA")
+        expect(wrapper.get("#stakedToValue").text()).toBe("Account 0.0.5Hosted by MPCQ | Central, USA")
         expect(wrapper.get("#pendingRewardValue").text()).toBe("0.00000000ℏ$0.00000")
         expect(wrapper.find("#declineRewardValue").exists()).toBe(false)
 

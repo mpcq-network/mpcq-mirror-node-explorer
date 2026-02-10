@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
-import {describe, expect, it} from 'vitest'
-import {flushPromises, mount} from "@vue/test-utils"
+import { describe, expect, it } from 'vitest'
+import { flushPromises, mount } from "@vue/test-utils"
 import AccountLink from "@/components/values/link/AccountLink.vue";
-import {SAMPLE_NETWORK_NODES} from "../Mocks";
+import { SAMPLE_NETWORK_NODES } from "../Mocks";
 import MockAdapter from "axios-mock-adapter";
 import axios from "axios";
 import router from "@/utils/RouteManager.ts";
@@ -81,7 +81,7 @@ describe("AccountLink.vue", () => {
         mock.onGet(matcher1).reply(200, SAMPLE_NETWORK_NODES);
 
         const testAccountId = "0.0.4"
-        const testExtra = "Hosted by Hedera | East Coast, USA"
+        const testExtra = "Hosted by MPCQ | East Coast, USA"
         const wrapper = mount(AccountLink, {
             global: {
                 plugins: [router]

@@ -13,17 +13,13 @@
         Mirror Explorer Routes
       </template>
       <template #content>
-        <div
-            class="route"
-            v-for="(route, index) of routes"
-            :key="index"
-            @click="handleClick(index)">
+        <div class="route" v-for="(route, index) of routes" :key="index" @click="handleClick(index)">
           <div class="trigger">
             <span>{{ route.title }}</span>
             <div class="route-subtitle">
-              <StringValue :string-value="route.subtitle"/>
-              <ChevronUp v-if="isOpen.includes(index)"/>
-              <ChevronDown v-if="!isOpen.includes(index)"/>
+              <StringValue :string-value="route.subtitle" />
+              <ChevronUp v-if="isOpen.includes(index)" />
+              <ChevronDown v-if="!isOpen.includes(index)" />
             </div>
           </div>
           <hr v-if="isOpen.includes(index)" class="horizontal-line">
@@ -48,12 +44,12 @@
 
 <script setup lang="ts">
 
-import {ref} from "vue";
+import { ref } from "vue";
 import StringValue from "@/components/values/StringValue.vue";
-import {CoreConfig} from "@/config/CoreConfig.ts";
+import { CoreConfig } from "@/config/CoreConfig.ts";
 import PageFrameV2 from "@/components/page/PageFrameV2.vue";
 import DashboardCardV2 from "@/components/DashboardCardV2.vue";
-import {ChevronDown, ChevronUp} from 'lucide-vue-next';
+import { ChevronDown, ChevronUp } from 'lucide-vue-next';
 
 const cryptoName = CoreConfig.inject().cryptoName
 
@@ -231,7 +227,6 @@ const routes = ref([
 </script>
 
 <style scoped>
-
 .route {
   border-width: 0;
   border-radius: 8px;
@@ -273,5 +268,4 @@ div.route-data-items {
   padding-left: 16px;
   font-weight: 400;
 }
-
 </style>

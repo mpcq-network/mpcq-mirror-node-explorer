@@ -1,18 +1,18 @@
 {
   "295": {
-    "sourcifyName": "Hedera Mainnet",
+    "sourcifyName": "MPCQ Mainnet",
     "supported": true
   },
   "296": {
-    "sourcifyName": "Hedera Testnet",
+    "sourcifyName": "MPCQ Testnet",
     "supported": true
   },
   "297": {
-    "sourcifyName": "Hedera Previewnet",
+    "sourcifyName": "MPCQ Previewnet",
     "supported": true
   },
   "298": {
-    "sourcifyName": "Hedera Localnet",
+    "sourcifyName": "MPCQ Localnet",
     "supported": true,
     "rpc": [
       "http://host.docker.internal:7546"

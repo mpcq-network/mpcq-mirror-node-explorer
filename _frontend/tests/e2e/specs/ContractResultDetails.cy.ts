@@ -4,7 +4,7 @@
 
 // https://docs.cypress.io/api/introduction/api.html
 
-import {makeExchangeFormat} from "../TestUtils";
+import { makeExchangeFormat } from "../TestUtils";
 
 describe('ContractResultDetails', () => {
 
@@ -39,7 +39,7 @@ describe('ContractResultDetails', () => {
         cy.url().should('include', consensusTimestamp)
 
         cy.get('#transactionTypeValue').should('have.text', 'CONTRACT CALL')
-        cy.get('#entityIdValue').should('have.text', 'Hedera Token Service System Contract')
+        cy.get('#entityIdValue').should('have.text', 'MPCQ Token Service System Contract')
 
         cy.get('#tab-TransactionDetails_Result')
             .click()
@@ -47,7 +47,7 @@ describe('ContractResultDetails', () => {
         cy.contains('Contract Result')
         cy.get('#resultValue').should('have.text', 'SUCCESS')
         cy.get('#fromValue').should('have.text', '0xb6d4c5a61a0c104b6c9222630fac403178725f7fCopy(0.0.1463739)')
-        cy.get('#toValue').should('have.text', '0x0000000000000000000000000000000000000167Copy(Hedera Token Service System Contract)')
+        cy.get('#toValue').should('have.text', '0x0000000000000000000000000000000000000167Copy(MPCQ Token Service System Contract)')
     })
 
     it('should display contract result of child (token burn) transaction', () => {
@@ -68,7 +68,7 @@ describe('ContractResultDetails', () => {
         cy.contains('Contract Result')
         cy.get('#resultValue').should('have.text', 'SUCCESS')
         cy.get('#fromValue').should('have.text', '0x0000000000000000000000000000000000163b59Copy(0.0.1456985)')
-        cy.get('#toValue').should('have.text', '0x0000000000000000000000000000000000000167Copy(Hedera Token Service System Contract)')
+        cy.get('#toValue').should('have.text', '0x0000000000000000000000000000000000000167Copy(MPCQ Token Service System Contract)')
     })
 
     it('should display contract result of child (crypto transfer) transaction', () => {
@@ -89,6 +89,6 @@ describe('ContractResultDetails', () => {
         cy.contains('Contract Result')
         cy.get('#resultValue').should('have.text', 'SUCCESS')
         cy.get('#fromValue').should('have.text', '0x0000000000000000000000000000000000163b59Copy(0.0.1456985)')
-        cy.get('#toValue').should('have.text', '0x0000000000000000000000000000000000000167Copy(Hedera Token Service System Contract)')
+        cy.get('#toValue').should('have.text', '0x0000000000000000000000000000000000000167Copy(MPCQ Token Service System Contract)')
     })
 })

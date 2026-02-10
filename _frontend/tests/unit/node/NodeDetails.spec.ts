@@ -2,15 +2,15 @@
 
 // SPDX-License-Identifier: Apache-2.0
 
-import {describe, expect, it} from 'vitest'
-import {flushPromises, mount} from "@vue/test-utils"
+import { describe, expect, it } from 'vitest'
+import { flushPromises, mount } from "@vue/test-utils"
 import axios from "axios";
-import {SAMPLE_NETWORK_NODES, SAMPLE_NETWORK_STAKE} from "../Mocks";
+import { SAMPLE_NETWORK_NODES, SAMPLE_NETWORK_STAKE } from "../Mocks";
 import MockAdapter from "axios-mock-adapter";
 import Oruga from "@oruga-ui/oruga-next";
-import {HMSF} from "@/utils/HMSF";
+import { HMSF } from "@/utils/HMSF";
 import NodeDetails from "@/pages/NodeDetails.vue";
-import {fetchGetURLs} from "../MockUtils";
+import { fetchGetURLs } from "../MockUtils";
 import router from "@/utils/RouteManager.ts";
 
 /*
@@ -57,7 +57,7 @@ describe("NodeDetails.vue", () => {
         const wrapper = mount(NodeDetails, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 nodeId: node.toString()
@@ -77,7 +77,7 @@ describe("NodeDetails.vue", () => {
 
         expect(wrapper.get("#adminKeyValue").text()).toBe("0xc67e3c4172e3eea8e4f45714240e453ab8702e7fc13d7ea58e523e6caeb8a38e" + "Copy" + "ED25519")
         expect(wrapper.get("#nodeAccountValue").text()).toBe("0.0.3")
-        expect(wrapper.get("#descriptionValue").text()).toBe("Hosted by Hedera | East Coast, USA")
+        expect(wrapper.get("#descriptionValue").text()).toBe("Hosted by MPCQ | East Coast, USA")
         expect(wrapper.get("#declineRewardValue").text()).toBe("false")
         expect(wrapper.get("#publicKeyValue").text()).toBe("0x308201a2300d0609CopyRSA")
         expect(wrapper.get("#fileValue").text()).toBe("0.0.102")
@@ -120,7 +120,7 @@ describe("NodeDetails.vue", () => {
         const wrapper = mount(NodeDetails, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 nodeId: node.toString()
@@ -139,7 +139,7 @@ describe("NodeDetails.vue", () => {
 
         expect(wrapper.text()).toMatch(RegExp("Node " + node))
         expect(wrapper.get("#nodeAccountValue").text()).toBe("0.0.3")
-        expect(wrapper.get("#descriptionValue").text()).toBe("Hosted by Hedera | East Coast, USA")
+        expect(wrapper.get("#descriptionValue").text()).toBe("Hosted by MPCQ | East Coast, USA")
         expect(wrapper.get("#declineRewardValue").text()).toBe("false")
         expect(wrapper.get("#nodeCertHashValue").text()).toBe("0xa171e3ba83476747aeb2e2ac4d0e115caaab918203b0dfe1cdeab443438fc289abc8ba8a6aff83db5f1b334046da88c8Copy")
 
@@ -158,7 +158,7 @@ describe("NodeDetails.vue", () => {
 
         expect(wrapper.text()).toMatch(RegExp("Node " + node))
         expect(wrapper.get("#nodeAccountValue").text()).toBe("0.0.4")
-        expect(wrapper.get("#descriptionValue").text()).toBe("Hosted by Hedera | East Coast, USA")
+        expect(wrapper.get("#descriptionValue").text()).toBe("Hosted by MPCQ | East Coast, USA")
         expect(wrapper.get("#declineRewardValue").text()).toBe("true")
         expect(wrapper.get("#nodeCertHashValue").text()).toBe("0x7409dec2e494b627ee49c69b294be1ceaebca3fdcaf36789e88fc7d5b0eef5561f52b82d35191a39c2fbed6027267166Copy")
 
@@ -179,7 +179,7 @@ describe("NodeDetails.vue", () => {
         const wrapper = mount(NodeDetails, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 nodeId: node.toString()
@@ -222,7 +222,7 @@ describe("NodeDetails.vue", () => {
         const wrapper = mount(NodeDetails, {
             global: {
                 plugins: [router, Oruga],
-                provide: {"isMediumScreen": false}
+                provide: { "isMediumScreen": false }
             },
             props: {
                 nodeId: UNKNOWN_ID

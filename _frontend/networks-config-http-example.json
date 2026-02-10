@@ -51,9 +51,9 @@
     }
   },
   {
-    "name": "localnode",
-    "displayName": "LOCAL NODE",
-    "url": "http://127.0.0.1:5551",
+    "name": "mpcqnet",
+    "displayName": "MPCQNET",
+    "url": "http://69.169.102.31:8084",
     "ledgerID": "FF",
     "enableWallet": true,
     "enableStaking": false,

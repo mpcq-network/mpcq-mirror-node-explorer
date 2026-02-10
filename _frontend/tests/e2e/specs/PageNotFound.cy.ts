@@ -2,7 +2,7 @@
 
 // https://docs.cypress.io/api/introduction/api.html
 
-describe('Hedera Explorer page not found', () => {
+describe('MPCQ Explorer page not found', () => {
 
     const defaultNetwork = 'mainnet'
     const target = "No page matches the specified URL"

@@ -1,20 +1,20 @@
 // SPDX-License-Identifier: Apache-2.0
 
-import {computed, ComputedRef, Ref, shallowRef, ShallowRef, watch, WatchStopHandle} from "vue";
-import {SystemContractEntry, systemContractRegistry} from "@/schemas/SystemContractRegistry";
-import {ethers} from "ethers";
-import {SourcifyCache, SourcifyRecord, SourcifyResponseItem} from "@/utils/cache/SourcifyCache";
-import {SolcMetadata} from "@/utils/solc/SolcMetadata";
-import {ContractResponse, TokenInfo, TokenType} from "@/schemas/MirrorNodeSchemas";
-import {ContractByIdCache} from "@/utils/cache/ContractByIdCache";
-import {TokenInfoCache} from "@/utils/cache/TokenInfoCache";
-import {EntityID} from "@/utils/EntityID";
-import {AuxdataStyle, decode} from "@ethereum-sourcify/bytecode-utils";
+import { computed, ComputedRef, Ref, shallowRef, ShallowRef, watch, WatchStopHandle } from "vue";
+import { SystemContractEntry, systemContractRegistry } from "@/schemas/SystemContractRegistry";
+import { ethers } from "ethers";
+import { SourcifyCache, SourcifyRecord, SourcifyResponseItem } from "@/utils/cache/SourcifyCache";
+import { SolcMetadata } from "@/utils/solc/SolcMetadata";
+import { ContractResponse, TokenInfo, TokenType } from "@/schemas/MirrorNodeSchemas";
+import { ContractByIdCache } from "@/utils/cache/ContractByIdCache";
+import { TokenInfoCache } from "@/utils/cache/TokenInfoCache";
+import { EntityID } from "@/utils/EntityID";
+import { AuxdataStyle, decode } from "@ethereum-sourcify/bytecode-utils";
 
 export class ContractAnalyzer {
 
     public readonly contractId: Ref<string | null>
-    public readonly report: ShallowRef<ContractAnalyzerReport|null> = shallowRef(null)
+    public readonly report: ShallowRef<ContractAnalyzerReport | null> = shallowRef(null)
 
     private watchHandles: WatchStopHandle[] = []
 
@@ -28,7 +28,7 @@ export class ContractAnalyzer {
 
     public mount(): void {
         this.watchHandles = [
-            watch(this.contractId, this.analyze, {immediate: true}),
+            watch(this.contractId, this.analyze, { immediate: true }),
         ]
     }
 
@@ -183,7 +183,7 @@ export class ContractAnalyzer {
     //
 
     public readonly solcVersion = computed(() => {
-        let result: string|null
+        let result: string | null
         if (this.byteCode.value !== null) {
             try {
                 const decoding = decode(this.byteCode.value, AuxdataStyle.SOLIDITY)
@@ -262,7 +262,7 @@ export class ContractAnalyzer {
                         }
                     }
                 }
-            } catch(error) {
+            } catch (error) {
                 this.report.value = {
                     systemContractEntry: null,
                     contractInfo: null,
@@ -291,10 +291,10 @@ export class ContractAnalyzer {
 
     private static async analyzeRegularContract(contractId: string, contractInfo: ContractResponse): Promise<ContractAnalyzerReport> {
 
-        let sourcifyRecord: SourcifyRecord|null
+        let sourcifyRecord: SourcifyRecord | null
         try {
             sourcifyRecord = await SourcifyCache.instance.lookup(contractId)
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (error) {
             sourcifyRecord = null
         }
@@ -352,16 +352,16 @@ export enum GlobalState {
 
 export interface ContractAnalyzerReport {
     // System contract
-    readonly systemContractEntry: SystemContractEntry|null
+    readonly systemContractEntry: SystemContractEntry | null
 
     // Regular contract
-    readonly contractInfo: ContractResponse|null
+    readonly contractInfo: ContractResponse | null
     readonly sourcifyRecord: SourcifyRecord | null
 
     // Token contract
-    readonly tokenInfo: TokenInfo|null
+    readonly tokenInfo: TokenInfo | null
 
     // All
     readonly abi: ethers.Fragment[] | null
-    readonly reportError: unknown|null
+    readonly reportError: unknown | null
 }

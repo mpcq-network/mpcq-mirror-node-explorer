@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: Apache-2.0
 
-import {describe, expect, test, vi} from 'vitest'
-import {flushPromises, mount} from "@vue/test-utils";
+import { describe, expect, test, vi } from 'vitest'
+import { flushPromises, mount } from "@vue/test-utils";
 import EVMAddress from "@/components/values/EVMAddress.vue";
 import Oruga from "@oruga-ui/oruga-next";
-import {SAMPLE_ACCOUNT_WITH_NATIVE_EVM_ADDRESS} from "../Mocks";
+import { SAMPLE_ACCOUNT_WITH_NATIVE_EVM_ADDRESS } from "../Mocks";
 import MockAdapter from "axios-mock-adapter";
 import axios from "axios";
 import router from "@/utils/RouteManager.ts";
@@ -16,9 +16,9 @@ describe("EVMAddress", () => {
     const longZeroAddress = "0x00000000000000000000000000000000002d21e6"
     const entityId = "0.0.2957798"
     const systemContractAddress = "0x0000000000000000000000000000000000000167"
-    const systemContractLabel = "Hedera Token Service System Contract"
+    const systemContractLabel = "MPCQ Token Service System Contract"
 
-    test("Constructing with EVM address and no Hedera ID", async () => {
+    test("Constructing with EVM address and no MPCQ ID", async () => {
 
         const mock = new MockAdapter(axios as any);
         const matcher1 = "/api/v1/accounts/" + evmAddress
@@ -42,7 +42,7 @@ describe("EVMAddress", () => {
         mock.restore()
     })
 
-    test("Constructing a compact form with EVM address and no Hedera ID", async () => {
+    test("Constructing a compact form with EVM address and no MPCQ ID", async () => {
 
         const mock = new MockAdapter(axios as any);
         const matcher1 = "/api/v1/accounts/" + evmAddress
@@ -67,7 +67,7 @@ describe("EVMAddress", () => {
         mock.restore()
     })
 
-    test("Constructing with long-zero address and no Hedera ID", async () => {
+    test("Constructing with long-zero address and no MPCQ ID", async () => {
 
         const mock = new MockAdapter(axios as any);
         const matcher2 = "/api/v1/accounts/" + longZeroAddress
@@ -91,7 +91,7 @@ describe("EVMAddress", () => {
         mock.restore()
     })
 
-    test("Constructing with Hedera ID and EVM address", async () => {
+    test("Constructing with MPCQ ID and EVM address", async () => {
 
         await router.push("/") // To avoid "missing required param 'network'" error
         const wrapper = mount(EVMAddress, {
@@ -111,7 +111,7 @@ describe("EVMAddress", () => {
         await flushPromises()
     })
 
-    test("Constructing with Hedera ID and EVM address, not showing ID and showing type", async () => {
+    test("Constructing with MPCQ ID and EVM address, not showing ID and showing type", async () => {
 
         await router.push("/") // To avoid "missing required param 'network'" error
         const wrapper = mount(EVMAddress, {

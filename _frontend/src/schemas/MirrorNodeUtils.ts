@@ -26,13 +26,13 @@ import {
     TransactionType,
     Transfer,
 } from "@/schemas/MirrorNodeSchemas";
-import {ethers} from "ethers";
-import {EntityID} from "@/utils/EntityID";
+import { ethers } from "ethers";
+import { EntityID } from "@/utils/EntityID";
 import * as hashgraph from "@hashgraph/proto";
 import axios from "axios";
-import {waitFor} from "@/utils/TimerUtils";
-import {TransactionID} from "@/utils/TransactionID.ts";
-import {Timestamp} from "@/utils/Timestamp.ts";
+import { waitFor } from "@/utils/TimerUtils";
+import { TransactionID } from "@/utils/TransactionID.ts";
+import { Timestamp } from "@/utils/Timestamp.ts";
 
 export function makeEthAddressForAccount(account: AccountInfo): string | null {
     if (account.evm_address) return account.evm_address;
@@ -142,13 +142,13 @@ export function makeNodeOwnerName(node: NetworkNode): string {
 }
 
 export function makeDefaultNodeDescription(nodeId: number | null): string {
-    return nodeId ? "Node " + nodeId : "?"
+    return nodeId ? "Node " + nodeId : "MPCQ Node"
 }
 
 export function makeOperatorDescription(accountId: string, nodes: NetworkNode[], isFee = false): string | null {
     let result: string | null
     if (accountId === "0.0.98") {
-        result = "Hedera fee collection account"
+        result = "MPCQ fee collection account"
     } else if (accountId === "0.0.800") {
         result = isFee ? "Staking reward account fee" : "Staking reward account"
     } else if (accountId === "0.0.801") {
@@ -170,8 +170,8 @@ export function isFeeTransfer(t: Transfer, nodes: NetworkNode[]): boolean {
 
 const emptyITF = new ethers.Interface([]) // To decode errors
 
-export function decodeSolidityErrorMessage(message: string|null): string | null {
-    let result: string|null
+export function decodeSolidityErrorMessage(message: string | null): string | null {
+    let result: string | null
 
     if (message === null || message === "0x" || message === "") {
         result = null
@@ -366,7 +366,7 @@ export async function isValidAssociation(accountId: string | null, tokenId: stri
         const params = {
             'token.id': tokenId,
         }
-        const response = await axios.get<TokenRelationshipResponse>(uRL, {params: params})
+        const response = await axios.get<TokenRelationshipResponse>(uRL, { params: params })
         const tokens = response.data?.tokens ?? []
         result = tokens.length > 0 && tokens[0].token_id === tokenId
     } else {
@@ -652,6 +652,6 @@ const precompiledContractLabels = new Map<string, string>([
     ["0x000000000000000000000000000000000000000a", "point evaluation"],
 ])
 
-export function labelForEthPrecompiledContract(evmAddress: string): string|null {
+export function labelForEthPrecompiledContract(evmAddress: string): string | null {
     return precompiledContractLabels.get(evmAddress) ?? null
 }

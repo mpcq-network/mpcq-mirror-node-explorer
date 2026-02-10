@@ -2,11 +2,11 @@
 
 // SPDX-License-Identifier: Apache-2.0
 
-import {describe, expect, test} from 'vitest'
-import {ref} from "vue";
-import {TransactionDownloader} from "@/utils/downloader/TransactionDownloader";
-import {TransactionType} from "@/schemas/MirrorNodeSchemas";
-import {DownloaderState} from "@/utils/downloader/EntityDownloader";
+import { describe, expect, test } from 'vitest'
+import { ref } from "vue";
+import { TransactionDownloader } from "@/utils/downloader/TransactionDownloader";
+import { TransactionType } from "@/schemas/MirrorNodeSchemas";
+import { DownloaderState } from "@/utils/downloader/EntityDownloader";
 import MockAdapter from "axios-mock-adapter";
 import axios from "axios";
 
@@ -75,7 +75,7 @@ describe("TransactionDownloader.ts", () => {
         expect(d.failureReason.value).not.toBeNull()
         expect(d.lastDownloadedEntityDate.value).toBeNull()
         expect(d.progress.value).toBe(0)
-        expect(d.getOutputName("dummy")).toBe("Hedera Transactions 0.0.98 03/01/2024 to 03/02/2024.csv")
+        expect(d.getOutputName("dummy")).toBe("MPCQ Transactions 0.0.98 03/01/2024 to 03/02/2024.csv")
         expect(d.csvBlob.value).toBeNull()
 
         expect(mock.history.get.length).toBe(1)

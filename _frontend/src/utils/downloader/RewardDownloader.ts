@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: Apache-2.0
 
-import {StakingReward, StakingRewardsResponse} from "@/schemas/MirrorNodeSchemas";
-import {Ref, watch} from "vue";
-import {dateToTimestamp, EntityDownloader} from "@/utils/downloader/EntityDownloader";
-import axios, {AxiosResponse} from "axios";
-import {CSVEncoder} from "@/utils/CSVEncoder";
+import { StakingReward, StakingRewardsResponse } from "@/schemas/MirrorNodeSchemas";
+import { Ref, watch } from "vue";
+import { dateToTimestamp, EntityDownloader } from "@/utils/downloader/EntityDownloader";
+import axios, { AxiosResponse } from "axios";
+import { CSVEncoder } from "@/utils/CSVEncoder";
 
 export class RewardDownloader extends EntityDownloader<StakingReward, StakingRewardsResponse> {
 
@@ -15,9 +15,9 @@ export class RewardDownloader extends EntityDownloader<StakingReward, StakingRew
     //
 
     public constructor(accountId: Ref<string | null>,
-                       startDate: Ref<Date | null>,
-                       endDate: Ref<Date | null>,
-                       maxRewardCount: number) {
+        startDate: Ref<Date | null>,
+        endDate: Ref<Date | null>,
+        maxRewardCount: number) {
         super(startDate, endDate, maxRewardCount)
         this.accountId = accountId
         watch(this.accountId, () => {
@@ -64,7 +64,7 @@ export class RewardDownloader extends EntityDownloader<StakingReward, StakingRew
     }
 
     protected makeOutputPrefix(): string {
-        return "Hedera Rewards " + this.checkAccountId()
+        return "MPCQ Rewards " + this.checkAccountId()
     }
 
     //

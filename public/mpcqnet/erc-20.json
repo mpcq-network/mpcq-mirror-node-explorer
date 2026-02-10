@@ -594,7 +594,7 @@
   {
     "contractId": "0.0.2947713",
     "address": "0xcc6e523436659196edadee128bb8ad2afe834223",
-    "name": "Hedera Test",
+    "name": "MPCQ Test",
     "symbol": "HEDERATEST12",
     "totalSupply": 49,
     "decimals": 0
@@ -834,7 +834,7 @@
   {
     "contractId": "0.0.2954126",
     "address": "0xaf9ea1944fc02becfd1c6de3086271df4dddb893",
-    "name": "Hedera",
+    "name": "MPCQ",
     "symbol": "DEMOOFDEMO",
     "totalSupply": 120,
     "decimals": 0
@@ -946,7 +946,7 @@
   {
     "contractId": "0.0.3038248",
     "address": "0xed9a706cdb290cdefd700ca4bc4826cf3ea3e24a",
-    "name": "Hedera",
+    "name": "MPCQ",
     "symbol": "DEMOTEST",
     "totalSupply": 120,
     "decimals": 0
@@ -3170,7 +3170,7 @@
   {
     "contractId": "0.0.3541445",
     "address": "0x2752b008c9f2e91ae4f4ece7cff34fdac705cae2",
-    "name": "Hedera",
+    "name": "MPCQ",
     "symbol": "HBAR",
     "totalSupply": 1201,
     "decimals": 18
@@ -24106,7 +24106,7 @@
   {
     "contractId": "0.0.3782254",
     "address": "0x017338fdbcb9c00138bee0fb838a0a5c4aa9135c",
-    "name": "HZ Hedera Testnet",
+    "name": "HZ MPCQ Testnet",
     "symbol": "HZH",
     "totalSupply": 10300,
     "decimals": 18
@@ -24226,7 +24226,7 @@
   {
     "contractId": "0.0.3792218",
     "address": "0x10dccb5a83234794a082da3a7b57ffc0eb0c0f84",
-    "name": "Hedera Token",
+    "name": "MPCQ Token",
     "symbol": "HT",
     "totalSupply": 11300,
     "decimals": 18
@@ -38602,7 +38602,7 @@
   {
     "contractId": "0.0.4487243",
     "address": "0xda647b1cc7da24c8229f37daa09881df73e3e350",
-    "name": "Hedera nativeCoin",
+    "name": "MPCQ nativeCoin",
     "symbol": "HBAR",
     "totalSupply": 0,
     "decimals": 18
@@ -51362,7 +51362,7 @@
   {
     "contractId": "0.0.4702000",
     "address": "0x09197e1d4715dac1849591090ef2a8a8c778f5ba",
-    "name": "HTS token OFT",
+    "name": "MTS token OFT",
     "symbol": "HTSOFT",
     "totalSupply": 0,
     "decimals": 18
@@ -55770,7 +55770,7 @@
   {
     "contractId": "0.0.4797832",
     "address": "0x0d8026f1787f0dbe9635df4d9dbcd22b64db99cf",
-    "name": "Wrapped Hedera token",
+    "name": "Wrapped MPCQ token",
     "symbol": "HBAR",
     "totalSupply": 100000000000000000000,
     "decimals": 18
@@ -55866,7 +55866,7 @@
   {
     "contractId": "0.0.4798672",
     "address": "0x6ff49331e3630ec2bfbd3b33bf9b16a04daada99",
-    "name": "Hedera",
+    "name": "MPCQ",
     "symbol": "HBAR",
     "totalSupply": 1e+24,
     "decimals": 18
@@ -55922,7 +55922,7 @@
   {
     "contractId": "0.0.4804746",
     "address": "0x0a7c4c48f684ab1ab0ac606c8ba70ba2678ef44e",
-    "name": "Wrapped Hedera token",
+    "name": "Wrapped MPCQ token",
     "symbol": "HBAR",
     "totalSupply": 100000000000000000000,
     "decimals": 18
@@ -56410,7 +56410,7 @@
   {
     "contractId": "0.0.4813209",
     "address": "0xf7c0c6313e66a8f4ac7369f7e78c889b252f3001",
-    "name": "Wrapped Hedera token",
+    "name": "Wrapped MPCQ token",
     "symbol": "HBAR",
     "totalSupply": 100000000000000000000,
     "decimals": 18
@@ -56826,7 +56826,7 @@
   {
     "contractId": "0.0.4826934",
     "address": "0xec286b0a6c2077d71cfe0d5e31d3ab884adc1638",
-    "name": "Wrapped Hedera token",
+    "name": "Wrapped MPCQ token",
     "symbol": "HBAR",
     "totalSupply": 100000000000000000000,
     "decimals": 18
@@ -57202,7 +57202,7 @@
   {
     "contractId": "0.0.4838291",
     "address": "0xc4a0faffd686c4852020ed50152f6a171b2554ad",
-    "name": "Hedera Token",
+    "name": "MPCQ Token",
     "symbol": "HDT",
     "totalSupply": 1e+42,
     "decimals": 18
@@ -58762,7 +58762,7 @@
   {
     "contractId": "0.0.4893916",
     "address": "0x00000000000000000000000000000000004aacdc",
-    "name": "Hedera Test Token",
+    "name": "MPCQ Test Token",
     "symbol": "HTT",
     "totalSupply": 0,
     "decimals": 18
@@ -58770,7 +58770,7 @@
   {
     "contractId": "0.0.4893922",
     "address": "0x00000000000000000000000000000000004aace2",
-    "name": "Hedera Test Token",
+    "name": "MPCQ Test Token",
     "symbol": "HTT",
     "totalSupply": 0,
     "decimals": 18
@@ -58778,7 +58778,7 @@
   {
     "contractId": "0.0.4893932",
     "address": "0x00000000000000000000000000000000004aacec",
-    "name": "Hedera Test Token",
+    "name": "MPCQ Test Token",
     "symbol": "HTT",
     "totalSupply": 5e+37,
     "decimals": 18
@@ -59226,7 +59226,7 @@
   {
     "contractId": "0.0.4927510",
     "address": "0x00000000000000000000000000000000004b3016",
-    "name": "Hedera Test Token",
+    "name": "MPCQ Test Token",
     "symbol": "HTT",
     "totalSupply": 1.0002e+24,
     "decimals": 18
@@ -59242,7 +59242,7 @@
   {
     "contractId": "0.0.4927714",
     "address": "0x00000000000000000000000000000000004b30e2",
-    "name": "Hedera Test Token",
+    "name": "MPCQ Test Token",
     "symbol": "HTT",
     "totalSupply": 1.00055e+24,
     "decimals": 18
@@ -61106,7 +61106,7 @@
   {
     "contractId": "0.0.5002978",
     "address": "0x7253b1e2c6bcd7db386e5021d8be8f7d47cc5441",
-    "name": "HTS token OFT",
+    "name": "MTS token OFT",
     "symbol": "HTSOFT",
     "totalSupply": 0,
     "decimals": 18
@@ -61114,7 +61114,7 @@
   {
     "contractId": "0.0.5002982",
     "address": "0x5b993fadebfb0de972a9dd00c78c7627c95197ed",
-    "name": "HTS token OFT",
+    "name": "MTS token OFT",
     "symbol": "HTSOFT",
     "totalSupply": 0,
     "decimals": 18
@@ -61122,7 +61122,7 @@
   {
     "contractId": "0.0.5003001",
     "address": "0x319d257ed27feb2114aa5c54093df46a76420445",
-    "name": "HTS token OFT",
+    "name": "MTS token OFT",
     "symbol": "HTSOFT",
     "totalSupply": 0,
     "decimals": 18
@@ -61130,7 +61130,7 @@
   {
     "contractId": "0.0.5003062",
     "address": "0x03b8fcf2377ec1aa55e68fec4f90b4e30cee4aac",
-    "name": "HTS token OFT",
+    "name": "MTS token OFT",
     "symbol": "HTSOFT",
     "totalSupply": 0,
     "decimals": 18
@@ -61138,7 +61138,7 @@
   {
     "contractId": "0.0.5003066",
     "address": "0xd18be6f3d9bcd83212442bde04d27a969c0ffe8a",
-    "name": "HTS token OFT",
+    "name": "MTS token OFT",
     "symbol": "HTSOFT",
     "totalSupply": 1000,
     "decimals": 18
@@ -61866,7 +61866,7 @@
   {
     "contractId": "0.0.5032410",
     "address": "0x3dfc1758a061bdbf3c2c850e13be7fdb43e2ca01",
-    "name": "Hedera",
+    "name": "MPCQ",
     "symbol": "HBAR",
     "totalSupply": 0,
     "decimals": 18
@@ -61922,7 +61922,7 @@
   {
     "contractId": "0.0.5038730",
     "address": "0x79fb71d599fec95ce924efe337b40647b4fae002",
-    "name": "Hedera",
+    "name": "MPCQ",
     "symbol": "HBAR",
     "totalSupply": 0,
     "decimals": 18
@@ -62075,7 +62075,7 @@
     "contractId": "0.0.5070830",
     "address": "0x00000000000000000000000000000000004d5fee",
     "name": "HT SToken",
-    "symbol": "HTS",
+    "symbol": "MTS",
     "totalSupply": 44444464448,
     "decimals": 6
   },
@@ -65330,7 +65330,7 @@
   {
     "contractId": "0.0.5224511",
     "address": "0x53609ad27c4af5c439d5382f5af164832b9b5414",
-    "name": "Hedera",
+    "name": "MPCQ",
     "symbol": "HDRA",
     "totalSupply": 1e+23,
     "decimals": 18
@@ -68418,7 +68418,7 @@
   {
     "contractId": "0.0.5276943",
     "address": "0xb56593bd0d04ae83ffe05818bf390b57dd073065",
-    "name": "Hedera USDT",
+    "name": "MPCQ USDT",
     "symbol": "hUSDT",
     "totalSupply": 1000000000000,
     "decimals": 6
@@ -74970,7 +74970,7 @@
   {
     "contractId": "0.0.5363590",
     "address": "0xbe0d8c2f738ef249f499283ad4cf031c9194cd95",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHEDERA",
     "totalSupply": 0,
     "decimals": 8
@@ -75002,7 +75002,7 @@
   {
     "contractId": "0.0.5363877",
     "address": "0xde3e212fb1fedbde09b2a37a95388414d7c08d25",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHEDERA",
     "totalSupply": 2000000000,
     "decimals": 18
@@ -75058,7 +75058,7 @@
   {
     "contractId": "0.0.5364077",
     "address": "0x07b1d5c62d7fbb92f541418931d84cc93495e226",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHEDERA",
     "totalSupply": 0,
     "decimals": 8
@@ -75066,7 +75066,7 @@
   {
     "contractId": "0.0.5364085",
     "address": "0xf78ab51986a9c36f7db76f23da36b31b74999e8e",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHEDERA",
     "totalSupply": 0,
     "decimals": 8
@@ -75074,7 +75074,7 @@
   {
     "contractId": "0.0.5364091",
     "address": "0xa3cde4bdd0d2b798267139bf21aea21a68ce416c",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHBAR",
     "totalSupply": 0,
     "decimals": 8
@@ -75082,7 +75082,7 @@
   {
     "contractId": "0.0.5364098",
     "address": "0xe7c17bfdbb14f650a99a95812589a0ced89c3bde",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHBAR",
     "totalSupply": 0,
     "decimals": 8
@@ -75090,7 +75090,7 @@
   {
     "contractId": "0.0.5364107",
     "address": "0xae92ae0578f8ad5e0d1336420ebe8354265f98e9",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHBAR",
     "totalSupply": 0,
     "decimals": 8
@@ -75098,7 +75098,7 @@
   {
     "contractId": "0.0.5364114",
     "address": "0xe9184c6f467d15c8377deacdc3d46c0e85cf5f09",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHBAR",
     "totalSupply": 0,
     "decimals": 8
@@ -75106,7 +75106,7 @@
   {
     "contractId": "0.0.5364118",
     "address": "0x7fca9f7f4e931712ae3fc13a48c9ce1694251275",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHBAR",
     "totalSupply": 0,
     "decimals": 8
@@ -75114,7 +75114,7 @@
   {
     "contractId": "0.0.5364121",
     "address": "0x643d1009a4d370785ca842034d31cf23ca7a8278",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHBAR",
     "totalSupply": 0,
     "decimals": 8
@@ -75122,7 +75122,7 @@
   {
     "contractId": "0.0.5364130",
     "address": "0xf5d4132023bfd645059f7ab4c45dc4e419cd35a7",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHBAR",
     "totalSupply": 29000000002,
     "decimals": 8
@@ -75938,7 +75938,7 @@
   {
     "contractId": "0.0.5370879",
     "address": "0x56c97773fab18f1e6f7291235456d7d79f96743c",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHBAR",
     "totalSupply": 0,
     "decimals": 8
@@ -75954,7 +75954,7 @@
   {
     "contractId": "0.0.5370893",
     "address": "0x2b19bba574c4fc4fae9c983cd0e8bdb85458be3a",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHBAR",
     "totalSupply": 0,
     "decimals": 8
@@ -75962,7 +75962,7 @@
   {
     "contractId": "0.0.5370907",
     "address": "0xb629ebce70f422a7ad4a80dbee2552b6e18213bd",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHBAR",
     "totalSupply": 0,
     "decimals": 8
@@ -75970,7 +75970,7 @@
   {
     "contractId": "0.0.5370913",
     "address": "0x77d3d5a6087feed26289f9970c17cc36afa37f15",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHBAR",
     "totalSupply": 0,
     "decimals": 8
@@ -75986,7 +75986,7 @@
   {
     "contractId": "0.0.5370922",
     "address": "0x3896c14effbf9afceedf5a40c11d370e9a0e243b",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHBAR",
     "totalSupply": 0,
     "decimals": 8
@@ -75994,7 +75994,7 @@
   {
     "contractId": "0.0.5370927",
     "address": "0x8e4c7dc9e747a3247c755f7b7b9e53414b8bee6d",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHBAR",
     "totalSupply": 0,
     "decimals": 8
@@ -77802,7 +77802,7 @@
   {
     "contractId": "0.0.5390765",
     "address": "0xeab718c74cf3a3775b46e796a425641b7b6e8409",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHBAR",
     "totalSupply": 0,
     "decimals": 8
@@ -77914,7 +77914,7 @@
   {
     "contractId": "0.0.5394478",
     "address": "0xc92e2c57db3606812fa9fb20bdbb79b5bb8ba7c3",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHBAR",
     "totalSupply": 26643700842,
     "decimals": 8
@@ -77978,7 +77978,7 @@
   {
     "contractId": "0.0.5395073",
     "address": "0x862e938fad1813568095d45d7d7552e31c13b4be",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHBAR",
     "totalSupply": 0,
     "decimals": 8
@@ -78554,7 +78554,7 @@
   {
     "contractId": "0.0.5415160",
     "address": "0x690828dac07027031680ee5fb220ead41803db7d",
-    "name": "Test Hedera USDT",
+    "name": "Test MPCQ USDT",
     "symbol": "THUSDT",
     "totalSupply": 0,
     "decimals": 18
@@ -78562,7 +78562,7 @@
   {
     "contractId": "0.0.5415477",
     "address": "0x57871bec341f97d7d16ee1c8cdd703eadde5fa26",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHBAR",
     "totalSupply": 0,
     "decimals": 8
@@ -78610,7 +78610,7 @@
   {
     "contractId": "0.0.5415724",
     "address": "0x2dcb3359b429b30dd6e107910d7f0627e373d242",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHBAR",
     "totalSupply": 10351918622,
     "decimals": 8
@@ -88514,7 +88514,7 @@
   {
     "contractId": "0.0.5617378",
     "address": "0x000000000000000000000000000000000055b6e2",
-    "name": "Hedera Test Token",
+    "name": "MPCQ Test Token",
     "symbol": "HTT",
     "totalSupply": 1e+56,
     "decimals": 18
@@ -89098,7 +89098,7 @@
   {
     "contractId": "0.0.5625659",
     "address": "0x000000000000000000000000000000000055d73b",
-    "name": "Hedera Test Token",
+    "name": "MPCQ Test Token",
     "symbol": "HTT",
     "totalSupply": 1.0001e+24,
     "decimals": 18
@@ -90018,7 +90018,7 @@
   {
     "contractId": "0.0.5641354",
     "address": "0x2032e4aab6d66becc319b1ab0f81ba26a2471cac",
-    "name": "Hedera Flowers Token",
+    "name": "MPCQ Flowers Token",
     "symbol": "HED59c",
     "totalSupply": 10000000,
     "decimals": 18
@@ -95818,7 +95818,7 @@
   {
     "contractId": "0.0.5791240",
     "address": "0xb7b6a146cc2a57f8a334c3eab8d19659399d56a2",
-    "name": "Hedera Test Token",
+    "name": "MPCQ Test Token",
     "symbol": "HTT",
     "totalSupply": 1e+21,
     "decimals": 18
@@ -95930,7 +95930,7 @@
   {
     "contractId": "0.0.5796709",
     "address": "0xebfe0b108312b7c7371947b7a13379b6225bcad1",
-    "name": "Hedera Test Token",
+    "name": "MPCQ Test Token",
     "symbol": "HTT",
     "totalSupply": 1.0049e+22,
     "decimals": 18
@@ -97842,7 +97842,7 @@
   {
     "contractId": "0.0.5820001",
     "address": "0x63bf62b17b032ac927deb5d919937ece88801c12",
-    "name": "Test Wrapped Token Hedera",
+    "name": "Test Wrapped Token MPCQ",
     "symbol": "TWTH",
     "totalSupply": 0,
     "decimals": 8
@@ -99634,7 +99634,7 @@
   {
     "contractId": "0.0.5849195",
     "address": "0x1f92a95365e6df296bda5f5d3644aa0c305d318b",
-    "name": "Hedera agent",
+    "name": "MPCQ agent",
     "symbol": "H",
     "totalSupply": 5e+25,
     "decimals": 18
@@ -99882,7 +99882,7 @@
   {
     "contractId": "0.0.5852013",
     "address": "0x5b64c4ba6ca77bdc75b67e8684fbf2b39329e022",
-    "name": "Hedera",
+    "name": "MPCQ",
     "symbol": "H",
     "totalSupply": 5e+42,
     "decimals": 18
@@ -99986,7 +99986,7 @@
   {
     "contractId": "0.0.5855217",
     "address": "0xffc011c018b9f96b036509247253b04e3e4709f8",
-    "name": "Hedera agent",
+    "name": "MPCQ agent",
     "symbol": "HEDERA",
     "totalSupply": 1e+24,
     "decimals": 18
@@ -104098,7 +104098,7 @@
   {
     "contractId": "0.0.5910441",
     "address": "0x256f68bbe6512b765ddd993e22ffbf92f1bb445a",
-    "name": "My Hedera Token",
+    "name": "My MPCQ Token",
     "symbol": "MHT",
     "totalSupply": 10,
     "decimals": 18
@@ -104106,7 +104106,7 @@
   {
     "contractId": "0.0.5910463",
     "address": "0x7e41c293dc636b00d69fb734fa5a472b1fd268e2",
-    "name": "My Hedera Token",
+    "name": "My MPCQ Token",
     "symbol": "MHT",
     "totalSupply": 5000000000,
     "decimals": 18
@@ -104114,7 +104114,7 @@
   {
     "contractId": "0.0.5910472",
     "address": "0x004cbc6999a4ad76a3af93180d7ed19e6e560b28",
-    "name": "My Hedera Token",
+    "name": "My MPCQ Token",
     "symbol": "MHT",
     "totalSupply": 50000000000000000000,
     "decimals": 18
@@ -105426,7 +105426,7 @@
   {
     "contractId": "0.0.5933124",
     "address": "0x6c107b3dbf16559524f384d7cff7c39cfa16b693",
-    "name": "Hedera Monitor",
+    "name": "MPCQ Monitor",
     "symbol": "HDSENT",
     "totalSupply": 2e+21,
     "decimals": 18
@@ -107178,7 +107178,7 @@
   {
     "contractId": "0.0.5993184",
     "address": "0x9721fa180ab44301611f1e754d0ba92ba7ad624e",
-    "name": "HTS token OFT",
+    "name": "MTS token OFT",
     "symbol": "HTSOFT",
     "totalSupply": 0,
     "decimals": 18
@@ -107210,7 +107210,7 @@
   {
     "contractId": "0.0.5993508",
     "address": "0xc888d9944e07a1c0f864038f9b4a568166bf54f0",
-    "name": "HTS token OFT",
+    "name": "MTS token OFT",
     "symbol": "HTSOFT",
     "totalSupply": 0,
     "decimals": 18
@@ -110475,7 +110475,7 @@
     "contractId": "0.0.6063028",
     "address": "0x8dd4304ca7d62df7ddb1ff1fba65c7dd1777e18e",
     "name": "Testing",
-    "symbol": "Hedera",
+    "symbol": "MPCQ",
     "totalSupply": 100,
     "decimals": 0
   },

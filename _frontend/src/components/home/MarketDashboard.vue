@@ -78,7 +78,7 @@ const cryptoLogoURL = computed(() =>
     darkSelected.value ? coreConfig.cryptoLogoDarkURL : coreConfig.cryptoLogoLightURL
 )
 
-// Hedera Metrics
+// MPCQ Metrics
 const networkMetricsLoader = new NetworkMetricsLoader()
 onMounted(() => networkMetricsLoader.mount())
 onBeforeUnmount(() => networkMetricsLoader.unmount())

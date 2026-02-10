@@ -2,16 +2,16 @@
 
 // SPDX-License-Identifier: Apache-2.0
 
-import {describe, expect, test} from 'vitest'
-import {flushPromises, mount} from "@vue/test-utils"
+import { describe, expect, test } from 'vitest'
+import { flushPromises, mount } from "@vue/test-utils"
 import axios from "axios";
-import {SAMPLE_NETWORK_NODES,} from "../Mocks";
+import { SAMPLE_NETWORK_NODES, } from "../Mocks";
 import MockAdapter from "axios-mock-adapter";
 import Oruga from "@oruga-ui/oruga-next";
-import {HMSF} from "@/utils/HMSF";
+import { HMSF } from "@/utils/HMSF";
 import ComplexKeyValue from "@/components/values/ComplexKeyValue.vue";
 import KeyValue from "@/components/values/KeyValue.vue";
-import {fetchGetURLs} from "../MockUtils";
+import { fetchGetURLs } from "../MockUtils";
 import NodeAdminKeyDetails from "@/pages/NodeAdminKeyDetails.vue";
 import router from "@/utils/RouteManager.ts";
 
@@ -51,7 +51,7 @@ describe("NodeAdminKeyDetails.vue", () => {
             "api/v1/network/nodes",
         ])
 
-        expect(wrapper.text()).toMatch("Admin Key for Node " + node + ' - Hosted by Hedera')
+        expect(wrapper.text()).toMatch("Admin Key for Node " + node + ' - Hosted by MPCQ')
         const key = wrapper.findComponent(ComplexKeyValue)
         expect(key.exists()).toBe(true)
         expect(key.text()).toBe(
@@ -105,7 +105,7 @@ describe("NodeAdminKeyDetails.vue", () => {
             "api/v1/network/nodes",
         ])
 
-        expect(wrapper.text()).toMatch("Admin Key for Node " + node + ' - Hosted by Hedera')
+        expect(wrapper.text()).toMatch("Admin Key for Node " + node + ' - Hosted by MPCQ')
         const key = wrapper.findComponent(KeyValue)
         expect(key.exists()).toBe(true)
         expect(key.text()).toBe("ED25519: c67e3c4172e3eea8e4f45714240e453ab8702e7fc13d7ea58e523e6caeb8a38e")

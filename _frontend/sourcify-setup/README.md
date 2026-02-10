@@ -26,10 +26,10 @@ open https://localhost/server/chains
 # Check the result of the above command contains something similar to:
 [
  {"name":"Ganache Localhost","chainId":1337,"rpc":["http://localhost:8545"],"supported":true},
- {"name":"Hedera Mainnet","chainId":295,"rpc":["https://mainnet.hashio.io/api"],"supported":true},
- {"name":"Hedera Testnet","chainId":296,"rpc":["https://testnet.hashio.io/api"],"supported":true},
- {"name":"Hedera Previewnet","chainId":297,"rpc":["https://previewnet.hashio.io/api"],"supported":true},
- {"name":"Hedera Localnet","chainId":298,"rpc":["http://host.docker.internal:7546"],"supported":true},
+ {"name":"MPCQ Mainnet","chainId":295,"rpc":["https://mainnet.hashio.io/api"],"supported":true},
+ {"name":"MPCQ Testnet","chainId":296,"rpc":["https://testnet.hashio.io/api"],"supported":true},
+ {"name":"MPCQ Previewnet","chainId":297,"rpc":["https://previewnet.hashio.io/api"],"supported":true},
+ {"name":"MPCQ Localnet","chainId":298,"rpc":["http://host.docker.internal:7546"],"supported":true},
  {"name":"Hardhat Network Localhost","chainId":31337,"rpc":["http://localhost:8545"],"supported":true}
 ]
 

@@ -1,17 +1,17 @@
 // SPDX-License-Identifier: Apache-2.0
 
-import {describe, expect, it} from 'vitest'
-import {flushPromises, mount} from "@vue/test-utils"
+import { describe, expect, it } from 'vitest'
+import { flushPromises, mount } from "@vue/test-utils"
 import axios from "axios";
-import {SAMPLE_NETWORK_NODES, SAMPLE_NETWORK_STAKE} from "../Mocks";
+import { SAMPLE_NETWORK_NODES, SAMPLE_NETWORK_STAKE } from "../Mocks";
 import DashboardCardV2 from "@/components/DashboardCardV2.vue";
 import MockAdapter from "axios-mock-adapter";
 import Oruga from "@oruga-ui/oruga-next";
-import {HMSF} from "@/utils/HMSF";
+import { HMSF } from "@/utils/HMSF";
 import Nodes from "@/pages/Nodes.vue";
 import NodeTable from "@/components/node/NodeTable.vue";
 import NetworkDashboardItemV2 from "@/components/node/NetworkDashboardItemV2.vue";
-import {fetchGetURLs} from "../MockUtils";
+import { fetchGetURLs } from "../MockUtils";
 import router from "@/utils/RouteManager.ts";
 import Nodes_NodeTable from "@/pages/Nodes_NodeTable.vue";
 
@@ -104,21 +104,21 @@ describe("Nodes.vue", () => {
         expect(wrapper2.get('tbody').text()).toBe(
             "0" +
             "0.0.3" +
-            "Hosted by Hedera | East Coast, USA" +
+            "Hosted by MPCQ | East Coast, USA" +
             "6,000,000ℏ" + tooltipStake + "(25.00% of the total of all validators)" +
             " min  max " +
             "Rewarded:5,000,000ℏNot Rewarded:1,000,000ℏMin:1,000,000ℏMax:30,000,000ℏ" +
             "1%" + tooltipRewardRate +
             "1" +
             "0.0.4" +
-            "Hosted by Hedera | East Coast, USA" +
+            "Hosted by MPCQ | East Coast, USA" +
             "9,000,000ℏ" + tooltipStake + "(37.50% of the total of all validators)" +
             " min  max " +
             "Rewarded:7,000,000ℏNot Rewarded:2,000,000ℏMin:1,000,000ℏMax:30,000,000ℏ" +
             "2%" + tooltipRewardRate +
             "2" +
             "0.0.5" +
-            "Hosted by Hedera | Central, USA" +
+            "Hosted by MPCQ | Central, USA" +
             "9,000,000ℏ" + tooltipStake + "(37.50% of the total of all validators)" +
             " min  max " +
             "Rewarded:7,000,000ℏ" +

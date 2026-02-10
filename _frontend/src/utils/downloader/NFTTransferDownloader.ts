@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
-import {Transaction} from "@/schemas/MirrorNodeSchemas";
-import {CSVEncoder} from "@/utils/CSVEncoder";
-import {lookupNFTTransfer} from "@/schemas/MirrorNodeUtils.ts";
-import {TokenTransferDownloader} from "@/utils/downloader/TokenTransferDownloader";
+import { Transaction } from "@/schemas/MirrorNodeSchemas";
+import { CSVEncoder } from "@/utils/CSVEncoder";
+import { lookupNFTTransfer } from "@/schemas/MirrorNodeUtils.ts";
+import { TokenTransferDownloader } from "@/utils/downloader/TokenTransferDownloader";
 
 export class NFTTransferDownloader extends TokenTransferDownloader {
 
@@ -30,7 +30,7 @@ export class NFTTransferDownloader extends TokenTransferDownloader {
     }
 
     protected makeOutputPrefix(): string {
-        return this.accountId.value !== null ? "Hedera NFT Transfers " + this.accountId.value : ""
+        return this.accountId.value !== null ? "MPCQ NFT Transfers " + this.accountId.value : ""
     }
 }
 

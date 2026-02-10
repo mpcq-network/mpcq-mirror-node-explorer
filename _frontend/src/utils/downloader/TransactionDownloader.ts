@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
-import {compareTransferByAccount, Transaction, TransactionType} from "@/schemas/MirrorNodeSchemas";
-import {CSVEncoder} from "@/utils/CSVEncoder";
-import {AbstractTransactionDownloader} from "@/utils/downloader/AbstractTransationDownloader";
-import {Ref} from "vue";
+import { compareTransferByAccount, Transaction, TransactionType } from "@/schemas/MirrorNodeSchemas";
+import { CSVEncoder } from "@/utils/CSVEncoder";
+import { AbstractTransactionDownloader } from "@/utils/downloader/AbstractTransationDownloader";
+import { Ref } from "vue";
 
 export class TransactionDownloader extends AbstractTransactionDownloader {
 
@@ -12,10 +12,10 @@ export class TransactionDownloader extends AbstractTransactionDownloader {
     //
 
     public constructor(accountId: Ref<string | null>,
-                       startDate: Ref<Date | null>,
-                       endDate: Ref<Date | null>,
-                       transactionType: Ref<TransactionType | null>,
-                       maxTransactionCount: number) {
+        startDate: Ref<Date | null>,
+        endDate: Ref<Date | null>,
+        transactionType: Ref<TransactionType | null>,
+        maxTransactionCount: number) {
         super(accountId, transactionType, startDate, endDate, maxTransactionCount)
     }
 
@@ -28,7 +28,7 @@ export class TransactionDownloader extends AbstractTransactionDownloader {
     }
 
     protected makeOutputPrefix(): string {
-        return this.accountId.value !== null ? "Hedera Transactions " + this.accountId.value : ""
+        return this.accountId.value !== null ? "MPCQ Transactions " + this.accountId.value : ""
     }
 }
 

@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: Apache-2.0
 
-import {compareTransferByAccount, Transaction, TransactionType} from "@/schemas/MirrorNodeSchemas";
-import {CSVEncoder} from "@/utils/CSVEncoder";
-import {computed, Ref} from "vue";
-import {lookupTokenTransfer} from "@/schemas/MirrorNodeUtils.ts";
-import {AbstractTransactionDownloader} from "@/utils/downloader/AbstractTransationDownloader";
+import { compareTransferByAccount, Transaction, TransactionType } from "@/schemas/MirrorNodeSchemas";
+import { CSVEncoder } from "@/utils/CSVEncoder";
+import { computed, Ref } from "vue";
+import { lookupTokenTransfer } from "@/schemas/MirrorNodeUtils.ts";
+import { AbstractTransactionDownloader } from "@/utils/downloader/AbstractTransationDownloader";
 
 export class TokenTransferDownloader extends AbstractTransactionDownloader {
 
@@ -15,10 +15,10 @@ export class TokenTransferDownloader extends AbstractTransactionDownloader {
     //
 
     public constructor(accountId: Ref<string | null>,
-                       startDate: Ref<Date | null>,
-                       endDate: Ref<Date | null>,
-                       tokenId: Ref<string | null>,
-                       maxTransactionCount: number) {
+        startDate: Ref<Date | null>,
+        endDate: Ref<Date | null>,
+        tokenId: Ref<string | null>,
+        maxTransactionCount: number) {
         super(accountId, computed(() => TransactionType.CRYPTOTRANSFER), startDate, endDate, maxTransactionCount)
         this.tokenId = tokenId
     }
@@ -46,7 +46,7 @@ export class TokenTransferDownloader extends AbstractTransactionDownloader {
     }
 
     protected makeOutputPrefix(): string {
-        return this.accountId.value !== null ? "Hedera Token Transfers " + this.accountId.value : ""
+        return this.accountId.value !== null ? "MPCQ Token Transfers " + this.accountId.value : ""
     }
 }
 

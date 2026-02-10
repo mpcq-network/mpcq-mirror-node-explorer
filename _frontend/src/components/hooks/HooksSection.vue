@@ -31,7 +31,7 @@
       </template>
       <template v-else>
         <DocSnippet
-            doc-hint="See how to create and use hooks in the Hedera documentation"
+            doc-hint="See how to create and use hooks in the MPCQ documentation"
             doc-url="https://docs.hedera.com/hedera/core-concepts"
         >
           <p>No hooks have been configured for this account.</p>

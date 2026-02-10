@@ -62,8 +62,8 @@ import TransactionDetails_Summary from "@/pages/TransactionDetails_Summary.vue";
 import TransactionDetails_Trace from "@/pages/TransactionDetails_Trace.vue";
 import Transactions from "@/pages/Transactions.vue";
 import TransactionsById from "@/pages/TransactionsById.vue";
-import {AppStorage} from "@/AppStorage.ts";
-import {RouteRecordRaw} from "vue-router";
+import { AppStorage } from "@/AppStorage.ts";
+import { RouteRecordRaw } from "vue-router";
 import Tokens_Fungible from "@/pages/Tokens_Fungible.vue";
 import Tokens_Nfts from "@/pages/Tokens_Nfts.vue";
 import Metrics_Network from "@/pages/Metrics_Network.vue";
@@ -482,7 +482,7 @@ export const BLOCK_DETAILS_ROUTE: RouteRecordRaw = {
     ]
 }
 
-export const NODES_ROUTE: RouteRecordRaw =     {
+export const NODES_ROUTE: RouteRecordRaw = {
     path: '/:network/nodes',
     name: 'Nodes',
     component: Nodes,
@@ -589,7 +589,7 @@ export const routes: Array<RouteRecordRaw> = [
     },
     {
         path: '/:network',
-        redirect: {name: 'Home'}
+        redirect: { name: 'Home' }
     },
     {
         path: '/:network/home',

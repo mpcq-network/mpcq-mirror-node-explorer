@@ -2,7 +2,7 @@
 
 // https://docs.cypress.io/api/introduction/api.html
 
-describe('Hedera Explorer home page', () => {
+describe('MPCQ Explorer home page', () => {
 
     const defaultNetwork = 'mainnet'
 

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
-import {Ref, ref, watch} from "vue";
-import {EntityID} from "@/utils/EntityID";
+import { Ref, ref, watch } from "vue";
+import { EntityID } from "@/utils/EntityID";
 import {
     AccountBalanceTransactions,
     AccountInfo,
@@ -17,21 +17,21 @@ import {
     TransactionByIdResponse,
     TransactionResponse
 } from "@/schemas/MirrorNodeSchemas";
-import {drainAccounts} from "@/schemas/MirrorNodeUtils.ts";
-import {aliasToBase32, byteToHex, paddedBytes} from "@/utils/B64Utils";
+import { drainAccounts } from "@/schemas/MirrorNodeUtils.ts";
+import { aliasToBase32, byteToHex, paddedBytes } from "@/utils/B64Utils";
 import axios from "axios";
-import {RouteLocationRaw} from "vue-router";
-import {TransactionID} from "@/utils/TransactionID";
-import {Timestamp} from "@/utils/Timestamp";
-import {NameRecord, NameService} from "@/utils/name_service/NameService";
-import {NameServiceProvider} from "@/utils/name_service/provider/NameServiceProvider";
-import {AccountByIdCache} from "@/utils/cache/AccountByIdCache";
-import {AppStorage} from "@/AppStorage";
-import {SelectedTokensCache} from "@/utils/cache/SelectedTokensCache";
-import {ERC20Cache} from "@/utils/cache/ERC20Cache.ts";
-import {ERC721Cache} from "@/utils/cache/ERC721Cache.ts";
-import {PublicLabelsCache} from "@/utils/cache/PublicLabelsCache.ts";
-import {routeManager} from "@/utils/RouteManager.ts";
+import { RouteLocationRaw } from "vue-router";
+import { TransactionID } from "@/utils/TransactionID";
+import { Timestamp } from "@/utils/Timestamp";
+import { NameRecord, NameService } from "@/utils/name_service/NameService";
+import { NameServiceProvider } from "@/utils/name_service/provider/NameServiceProvider";
+import { AccountByIdCache } from "@/utils/cache/AccountByIdCache";
+import { AppStorage } from "@/AppStorage";
+import { SelectedTokensCache } from "@/utils/cache/SelectedTokensCache";
+import { ERC20Cache } from "@/utils/cache/ERC20Cache.ts";
+import { ERC721Cache } from "@/utils/cache/ERC721Cache.ts";
+import { PublicLabelsCache } from "@/utils/cache/PublicLabelsCache.ts";
+import { routeManager } from "@/utils/RouteManager.ts";
 
 export abstract class SearchAgent<L, E> {
 
@@ -97,11 +97,11 @@ export abstract class SearchAgent<L, E> {
 
 export class SearchCandidate<E> {
     constructor(readonly description: string,
-                readonly extra: string | null,
-                readonly route: RouteLocationRaw | null,
-                readonly entity: E,
-                readonly agent: SearchAgent<unknown, E>,
-                readonly secondary: boolean = false) {
+        readonly extra: string | null,
+        readonly route: RouteLocationRaw | null,
+        readonly entity: E,
+        readonly agent: SearchAgent<unknown, E>,
+        readonly secondary: boolean = false) {
     }
 }
 
@@ -373,7 +373,7 @@ export class TransactionSearchAgent extends SearchAgent<TransactionID | Timestam
                 const r = await axios.get<TransactionResponse>("api/v1/transactions?timestamp=" + t)
                 transactions = r.data.transactions ?? []
             } else {
-                if (transactionParam.length == 48) { // Hedera hash
+                if (transactionParam.length == 48) { // MPCQ hash
                     // https://testnet.mirrornode.hedera.com/api/v1/docs/#/transactions/getTransactionById
                     const r = await axios.get<TransactionByIdResponse>("api/v1/transactions/" + byteToHex(transactionParam))
                     transactions = r.data.transactions ?? []

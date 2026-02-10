@@ -2,7 +2,7 @@
 
 // https://docs.cypress.io/api/introduction/api.html
 
-describe('Hedera Explorer legal notices', () => {
+describe('MPCQ Explorer legal notices', () => {
 
     it('Visits the terms of use notice', () => {
         cy.visit('/testnet')

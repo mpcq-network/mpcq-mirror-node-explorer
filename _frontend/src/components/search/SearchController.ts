@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
-import {computed, Ref, watch} from "vue";
-import {EntityID} from "@/utils/EntityID";
-import {TransactionID} from "@/utils/TransactionID";
-import {AccountAlias} from "@/utils/AccountAlias";
-import {hexToByte} from "@/utils/B64Utils";
-import {Timestamp} from "@/utils/Timestamp";
+import { computed, Ref, watch } from "vue";
+import { EntityID } from "@/utils/EntityID";
+import { TransactionID } from "@/utils/TransactionID";
+import { AccountAlias } from "@/utils/AccountAlias";
+import { hexToByte } from "@/utils/B64Utils";
+import { Timestamp } from "@/utils/Timestamp";
 import {
     AccountSearchAgent,
     BlockSearchAgent,
@@ -21,10 +21,10 @@ import {
     TopicSearchAgent,
     TransactionSearchAgent
 } from "@/components/search/SearchAgent";
-import {nameServiceProviders} from "@/utils/name_service/provider/AllProviders";
-import {InputChangeController} from "@/components/utils/InputChangeController.ts";
-import {PublicLabelsCache} from "@/utils/cache/PublicLabelsCache.ts";
-import {routeManager} from "@/utils/RouteManager.ts";
+import { nameServiceProviders } from "@/utils/name_service/provider/AllProviders";
+import { InputChangeController } from "@/components/utils/InputChangeController.ts";
+import { PublicLabelsCache } from "@/utils/cache/PublicLabelsCache.ts";
+import { routeManager } from "@/utils/RouteManager.ts";
 
 export class SearchController {
 
@@ -53,7 +53,7 @@ export class SearchController {
     shard.realm.num-seconds-nanoseconds  | Transaction ID   | api/v1/transactions/{inputText}
                                          | (normalized)     |
     -------------------------------------+------------------+------------------------------------------------------
-    hexadecimal 48 bytes                 | Hedera Hash      | api/v1/transactions/{inputText}
+    hexadecimal 48 bytes                 | MPCQ Hash      | api/v1/transactions/{inputText}
                                          |                  | api/v1/blocks/{inputText}
     -------------------------------------+------------------+------------------------------------------------------
     hexadecimal 32 bytes                 | EVM Hash         | api/v1/contracts/results/{inputText}

@@ -2,12 +2,12 @@
 
 // SPDX-License-Identifier: Apache-2.0
 
-import {shallowRef} from "vue";
-import {AccountByAddressCache} from "@/utils/cache/AccountByAddressCache";
-import {WalletSession} from "@/utils/wallet/WalletSession";
-import {WalletClient} from "@/utils/wallet/client/WalletClient";
-import {HEDERA_LOGO, networkToChainId, WalletClient_Ethereum} from "@/utils/wallet/client/WalletClient_Ethereum";
-import {EIP6963AnnounceProviderEvent, EIP6963ProviderDetail} from "@/utils/wallet/eip6963";
+import { shallowRef } from "vue";
+import { AccountByAddressCache } from "@/utils/cache/AccountByAddressCache";
+import { WalletSession } from "@/utils/wallet/WalletSession";
+import { WalletClient } from "@/utils/wallet/client/WalletClient";
+import { HEDERA_LOGO, networkToChainId, WalletClient_Ethereum } from "@/utils/wallet/client/WalletClient_Ethereum";
+import { EIP6963AnnounceProviderEvent, EIP6963ProviderDetail } from "@/utils/wallet/eip6963";
 import {
     AddEthereumChainParameter,
     eth_accounts,
@@ -19,7 +19,7 @@ import {
     wallet_revokePermissions,
     wallet_switchEthereumChain
 } from "@/utils/wallet/eip1193";
-import {routeManager} from "@/utils/RouteManager.ts";
+import { routeManager } from "@/utils/RouteManager.ts";
 
 
 export class EIP6963Agent {
@@ -211,10 +211,10 @@ export class EIP6963Agent {
 class WalletSession_EIP6963 extends WalletSession {
 
     constructor(public providerDetails: EIP6963ProviderDetail,
-                name: string,
-                iconURL: string | null,
-                usableAccountIds: string[],
-                otherAccountIds: string[]) {
+        name: string,
+        iconURL: string | null,
+        usableAccountIds: string[],
+        otherAccountIds: string[]) {
         super(name, iconURL, usableAccountIds, otherAccountIds)
     }
 
@@ -252,7 +252,7 @@ const CHAIN_PARAM_MAINNET: AddEthereumChainParameter = {
     blockExplorerUrls: [
         "https://hashscan.io/mainnet/home"
     ],
-    chainName: "Hedera Mainnet",
+    chainName: "MPCQ Mainnet",
     iconUrls: [
         HEDERA_LOGO
     ],
@@ -267,7 +267,7 @@ const CHAIN_PARAM_TESTNET: AddEthereumChainParameter = {
     blockExplorerUrls: [
         "https://hashscan.io/testnet/home"
     ],
-    chainName: "Hedera Testnet",
+    chainName: "MPCQ Testnet",
     iconUrls: [
         HEDERA_LOGO
     ],
@@ -282,7 +282,7 @@ const CHAIN_PARAM_PREVIEWNET: AddEthereumChainParameter = {
     blockExplorerUrls: [
         "https://hashscan.io/previewnet/home"
     ],
-    chainName: "Hedera Previewnet",
+    chainName: "MPCQ Previewnet",
     iconUrls: [
         HEDERA_LOGO
     ],

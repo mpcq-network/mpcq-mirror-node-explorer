@@ -16,9 +16,9 @@
     <!-- input -->
     <template #taskDialogInput>
       <div style="color: var(--text-secondary); font-size: 14px;">
-        Please upload the Solidity source files and metadata associated with the Hedera contract.
+        Please upload the Solidity source files and metadata associated with the MPCQ contract.
         Once submitted the verification service will compile the source code and match it with
-        the contract bytecode deployed on the Hedera network.
+        the contract bytecode deployed on the MPCQ network.
       </div>
 
       <div style="width: 100%">

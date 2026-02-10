@@ -5,6 +5,12 @@ services:
     restart: "always"
     ports:
       - "8080:8080"
+    environment:
+      - DOCKER_LOCAL_MIRROR_NODE_MENU_NAME=${DOCKER_LOCAL_MIRROR_NODE_MENU_NAME}
+      - DOCKER_LOCAL_MIRROR_NODE_URL=${DOCKER_LOCAL_MIRROR_NODE_URL}
+      - SOURCIFY_ENABLED=true
+      - SOURCIFY_API_URL=http://69.169.102.31:5555
+      - SOURCIFY_REPO_URL=http://69.169.102.31:8081
     volumes:
       - ./public/networks-config.json:/app/networks-config.json
       - ./public/core-config.json:/app/core-config.json

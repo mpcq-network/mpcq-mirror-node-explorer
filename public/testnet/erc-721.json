@@ -266,7 +266,7 @@
   {
     "contractId": "0.0.3541456",
     "address": "0xf337004cc8bd87c04dbc4d5af6a2d3f2d2e9d4ba",
-    "name": "Hedera",
+    "name": "MPCQ",
     "symbol": "HBAR"
   },
   {
@@ -9458,25 +9458,25 @@
   {
     "contractId": "0.0.4652523",
     "address": "0x616c3c9bcb165e7e14e885b58c6b3612817f10a4",
-    "name": "Hedera Character NFT",
+    "name": "MPCQ Character NFT",
     "symbol": "HCNFT"
   },
   {
     "contractId": "0.0.4652534",
     "address": "0x797cf52652c4423bed1914408c316e373f27211d",
-    "name": "Hedera Character NFT",
+    "name": "MPCQ Character NFT",
     "symbol": "HCNFT"
   },
   {
     "contractId": "0.0.4652541",
     "address": "0x07de8ad428af8c166e1c68e113654baded20594d",
-    "name": "Hedera Character NFT",
+    "name": "MPCQ Character NFT",
     "symbol": "HCNFT"
   },
   {
     "contractId": "0.0.4652573",
     "address": "0x27fe7b6dde28ab40da4de60e0920ad6e62d0bd92",
-    "name": "Hedera Character NFT",
+    "name": "MPCQ Character NFT",
     "symbol": "HCNFT"
   },
   {
@@ -18440,13 +18440,13 @@
   {
     "contractId": "0.0.5671448",
     "address": "0x0000000000000000000000000000000000568a18",
-    "name": "Hedera Land Registry",
+    "name": "MPCQ Land Registry",
     "symbol": "HLR"
   },
   {
     "contractId": "0.0.5671518",
     "address": "0x0000000000000000000000000000000000568a5e",
-    "name": "Hedera Land Registry",
+    "name": "MPCQ Land Registry",
     "symbol": "HLR"
   },
   {
@@ -20000,7 +20000,7 @@
   {
     "contractId": "0.0.5833297",
     "address": "0xa1afd33b818eff159a04556b0beb490436c9f7a4",
-    "name": "Hedera Testnet",
+    "name": "MPCQ Testnet",
     "symbol": "HEDERA_TEST_1"
   },
   {
@@ -23354,7 +23354,7 @@
   {
     "contractId": "0.0.6076709",
     "address": "0x89170f21de041a4cc48a17e0284696c31addeb85",
-    "name": "Hedera NFT",
+    "name": "MPCQ NFT",
     "symbol": "HNFT"
   }
 ]

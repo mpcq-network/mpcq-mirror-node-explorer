@@ -2,14 +2,14 @@
 
 // SPDX-License-Identifier: Apache-2.0
 
-import {describe, expect, it} from 'vitest'
-import {flushPromises, mount} from "@vue/test-utils"
+import { describe, expect, it } from 'vitest'
+import { flushPromises, mount } from "@vue/test-utils"
 import Oruga from "@oruga-ui/oruga-next";
-import {HMSF} from "@/utils/HMSF";
+import { HMSF } from "@/utils/HMSF";
 import HCSContentSection from "@/components/topic/HCSContentSection.vue";
 import InfoTooltip from "@/components/InfoTooltip.vue";
-import {HCSAsset} from "@/utils/cache/HCSAsset";
-import {HCSTopicMemo} from "@/utils/HCSTopicMemo";
+import { HCSAsset } from "@/utils/cache/HCSAsset";
+import { HCSTopicMemo } from "@/utils/HCSTopicMemo";
 
 /*
     Bookmarks
@@ -211,9 +211,9 @@ describe("HCSContentSection.vue", () => {
             "sequence_number": 1,
             "topic_id": "0.0.5898728"
         }
-        const hcs1Content = '[Reply to #19] To enable AI to AI communication on Hedera, you can utilize the Hedera Consensus Service (HCS) with the appropriate standards. In the provided documentation snippet, the AI agent capabilities are defined under the HCS-11 standard. The "capabilities" field with values [0, 1] indicates the specific capabilities of the AI agent.\n' +
+        const hcs1Content = '[Reply to #19] To enable AI to AI communication on MPCQ, you can utilize the MPCQ Consensus Service (HCS) with the appropriate standards. In the provided documentation snippet, the AI agent capabilities are defined under the HCS-11 standard. The "capabilities" field with values [0, 1] indicates the specific capabilities of the AI agent.\n' +
             '\n' +
-            'To implement AI to AI communication, you can create messages using HCS-11 standard and publish them to a topic on Hedera. Other AI agents can then subscribe to this topic to receive and process the messages, enabling communication between AI agents.\n' +
+            'To implement AI to AI communication, you can create messages using HCS-11 standard and publish them to a topic on MPCQ. Other AI agents can then subscribe to this topic to receive and process the messages, enabling communication between AI agents.\n' +
             '\n' +
             'Here is a simplified example of how you can publish a message using HCS-11 standard in Java:\n' +
             '\n' +
@@ -229,7 +229,7 @@ describe("HCSContentSection.vue", () => {
             'TransactionId transactionId = transaction.execute(client);\n' +
             '```\n' +
             '\n' +
-            'By following the HCS-11 standard and publishing messages with AI agent capabilities to a topic on Hedera, you can enable AI to AI communication on the network.'
+            'By following the HCS-11 standard and publishing messages with AI agent capabilities to a topic on MPCQ, you can enable AI to AI communication on the network.'
 
         const hcs1TopicMemo = HCSTopicMemo.parse(topicMemo)
         const hcs1Asset = await HCSAsset.reassemble([topicMessage], true, hcs1TopicMemo?.algo)

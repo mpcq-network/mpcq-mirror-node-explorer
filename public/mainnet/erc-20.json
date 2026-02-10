@@ -3146,7 +3146,7 @@
   {
     "contractId": "0.0.4825074",
     "address": "0x751671987fe7d7544476088e78a5be973c53fd5f",
-    "name": "Hedera Test Token",
+    "name": "MPCQ Test Token",
     "symbol": "HEDERA.TEST",
     "totalSupply": 100,
     "decimals": 0
@@ -3162,8 +3162,8 @@
   {
     "contractId": "0.0.4850869",
     "address": "0x7e7d0a6b011b1e83fec6903337814edee860bc87",
-    "name": "Hedera Data Owner",
-    "symbol": "Hedera Data Owner",
+    "name": "MPCQ Data Owner",
+    "symbol": "MPCQ Data Owner",
     "totalSupply": 10000,
     "decimals": 2
   },
@@ -4706,7 +4706,7 @@
   {
     "contractId": "0.0.8144163",
     "address": "0x187c13c5e5556c58aff7805f9b5ab4b7bbd109dc",
-    "name": "Wrapped Hedera",
+    "name": "Wrapped MPCQ",
     "symbol": "WHBAR",
     "totalSupply": 1039544797,
     "decimals": 8
@@ -5610,7 +5610,7 @@
   {
     "contractId": "0.0.8249026",
     "address": "0x988ef6cb3d1b27590f7cb792a17f5b238163b6e2",
-    "name": "Test Hedera",
+    "name": "Test MPCQ",
     "symbol": "HBAR108",
     "totalSupply": 0,
     "decimals": 0
@@ -5722,7 +5722,7 @@
   {
     "contractId": "0.0.8315732",
     "address": "0x912b6bec08cf87cccca41b0ff9bb4b2969986954",
-    "name": "20 FEB2025 Hedera",
+    "name": "20 FEB2025 MPCQ",
     "symbol": "HEDERAUAETEST",
     "totalSupply": 0,
     "decimals": 0

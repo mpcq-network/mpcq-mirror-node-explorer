@@ -70,6 +70,7 @@
     "name": "mpcqnet",
     "displayName": "MPCQNET",
     "url": "http://69.169.102.31:5551/",
+    "topicsURL": "http://69.169.102.31:8084",
     "ledgerID": "00",
     "baseRealm": 0,
     "baseShard": 0,
@@ -84,9 +85,9 @@
     "publicLabelsURL": null,
     "sourcifySetup": {
       "activate": true,
-      "repoURL": "https://repository.local/contracts/",
-      "serverURL": "https://localhost/server/",
-      "chainID": 295
+      "repoURL": "http://69.169.102.31:5551/contracts/",
+      "serverURL": "http://69.169.102.31:5555/",
+      "chainID": 4660
     }
   }
 ]

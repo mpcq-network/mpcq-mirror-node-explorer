@@ -2,20 +2,20 @@
 
 // SPDX-License-Identifier: Apache-2.0
 
-import {WalletSession} from "@/utils/wallet/WalletSession";
-import {WalletClient} from "@/utils/wallet/client/WalletClient";
-import {WalletClient_Hiero} from "@/utils/wallet/client/WalletClient_Hiero";
-import {networkToChainId, WalletClient_Ethereum} from "@/utils/wallet/client/WalletClient_Ethereum";
-import {EIP1193Provider} from "@/utils/wallet/eip1193";
-import {CAAccountId, CAChainId} from "@/utils/wallet/caip";
-import {AccountByIdCache} from "@/utils/cache/AccountByIdCache";
+import { WalletSession } from "@/utils/wallet/WalletSession";
+import { WalletClient } from "@/utils/wallet/client/WalletClient";
+import { WalletClient_Hiero } from "@/utils/wallet/client/WalletClient_Hiero";
+import { networkToChainId, WalletClient_Ethereum } from "@/utils/wallet/client/WalletClient_Ethereum";
+import { EIP1193Provider } from "@/utils/wallet/eip1193";
+import { CAAccountId, CAChainId } from "@/utils/wallet/caip";
+import { AccountByIdCache } from "@/utils/cache/AccountByIdCache";
 import type SignClient from "@walletconnect/sign-client";
-import {ProposalTypes, SessionTypes, SignClientTypes} from "@walletconnect/types";
-import type {WalletConnectModal} from "@walletconnect/modal"; // "type" to avoid unit test break
-import {AccountByAddressCache} from "@/utils/cache/AccountByAddressCache";
-import {EntityID} from "@/utils/EntityID";
-import {getSdkError} from "@walletconnect/utils";
-import {routeManager} from "@/utils/RouteManager.ts";
+import { ProposalTypes, SessionTypes, SignClientTypes } from "@walletconnect/types";
+import type { WalletConnectModal } from "@walletconnect/modal"; // "type" to avoid unit test break
+import { AccountByAddressCache } from "@/utils/cache/AccountByAddressCache";
+import { EntityID } from "@/utils/EntityID";
+import { getSdkError } from "@walletconnect/utils";
+import { routeManager } from "@/utils/RouteManager.ts";
 
 export class WalletConnectAgent {
 
@@ -29,10 +29,10 @@ export class WalletConnectAgent {
     public static async makeInstance(projectId: string): Promise<WalletConnectAgent | null> {
         let result: WalletConnectAgent | null
         if (projectId !== null) {
-            const PRODUCT_NAME = import.meta.env.VITE_APP_PRODUCT_NAME ?? "Hedera Mirror Node Explorer"
+            const PRODUCT_NAME = import.meta.env.VITE_APP_PRODUCT_NAME ?? "MPCQ Mirror Node Explorer"
             const METADATA: SignClientTypes.Metadata = {
                 name: PRODUCT_NAME,
-                description: "A ledger explorer for the Hedera network",
+                description: "A ledger explorer for the MPCQ network",
                 url: window.location.origin,
                 icons: [],
             }
@@ -58,8 +58,8 @@ export class WalletConnectAgent {
         const params = {
             optionalNamespaces: WalletConnectAgent.makeNamespaces([network])
         }
-        const {uri, approval} = await this.signClient.connect(params)
-        const {WalletConnectModal} = await import("@walletconnect/modal")
+        const { uri, approval } = await this.signClient.connect(params)
+        const { WalletConnectModal } = await import("@walletconnect/modal")
         // https://docs.reown.com/advanced/walletconnectmodal/options
         const connectModal = new WalletConnectModal({
             projectId: this.projectId,
@@ -260,7 +260,7 @@ export class WalletConnectAgent {
                     resolve(null)
                 }
             })
-            connectModal.openModal({uri})
+            connectModal.openModal({ uri })
                 .then(() => approval())
                 .then((session) => resolve(session))
                 .catch((reason) => reject(reason))
@@ -273,11 +273,11 @@ export class WalletConnectAgent {
 class WalletSession_WC extends WalletSession {
 
     constructor(private readonly signClient: SignClient,
-                private readonly session: SessionTypes.Struct,
-                name: string,
-                iconURL: string | null,
-                usableAccountIds: string[],
-                otherAccountIds: string[]) {
+        private readonly session: SessionTypes.Struct,
+        name: string,
+        iconURL: string | null,
+        usableAccountIds: string[],
+        otherAccountIds: string[]) {
         super(name, iconURL, usableAccountIds, otherAccountIds)
     }
 
@@ -373,8 +373,8 @@ class WalletSession_WC extends WalletSession {
 class Provider_WC implements EIP1193Provider {
 
     public constructor(private readonly signClient: SignClient,
-                       private readonly session: SessionTypes.Struct,
-                       private readonly caChainId: CAChainId) {
+        private readonly session: SessionTypes.Struct,
+        private readonly caChainId: CAChainId) {
     }
 
     //

@@ -1,16 +1,16 @@
 // SPDX-License-Identifier: Apache-2.0
 
-import {EntityID} from "@/utils/EntityID";
-import {ethers} from "ethers";
-import {routeManager} from "@/utils/RouteManager.ts";
+import { EntityID } from "@/utils/EntityID";
+import { ethers } from "ethers";
+import { routeManager } from "@/utils/RouteManager.ts";
 
 export class SystemContractRegistry {
 
     private readonly entries = new Map<string, SystemContractEntry>()
 
     constructor() {
-        this.addEntry("0.0.359", "Hedera Token Service System Contract", "IHederaTokenService", "https://github.com/hashgraph/hedera-smart-contracts/blob/main/contracts/system-contracts/hedera-token-service/HederaTokenService.sol")
-        this.addEntry("0.0.360", "Hedera Exchange Rate System Contract", "IExchangeRate", "https://github.com/hashgraph/hedera-smart-contracts/blob/main/contracts/system-contracts/exchange-rate/ExchangeRateSystemContract.sol")
+        this.addEntry("0.0.359", "MPCQ Token Service System Contract", "IHederaTokenService", "https://github.com/hashgraph/hedera-smart-contracts/blob/main/contracts/system-contracts/hedera-token-service/HederaTokenService.sol")
+        this.addEntry("0.0.360", "MPCQ Exchange Rate System Contract", "IExchangeRate", "https://github.com/hashgraph/hedera-smart-contracts/blob/main/contracts/system-contracts/exchange-rate/ExchangeRateSystemContract.sol")
     }
 
     public lookup(contractId: string): SystemContractEntry | null {
